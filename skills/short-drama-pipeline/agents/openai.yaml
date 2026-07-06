@@ -1,0 +1,3 @@
+display_name: Short Drama Pipeline
+short_description: Provider-agnostic AI short-drama workflow with project packages, prompts, QC gates, and release packs.
+default_prompt: "Use the short-drama-pipeline skill to turn this idea into a repeatable AI short-drama project package."

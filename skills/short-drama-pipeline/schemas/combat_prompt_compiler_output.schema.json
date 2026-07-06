@@ -1,0 +1,455 @@
+﻿{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "combat_prompt_compiler_output.schema.json",
+  "title": "Combat Prompt Compiler Output",
+  "type": "object",
+  "required": [
+    "project_id",
+    "episode_id",
+    "shot_id",
+    "is_combat_shot",
+    "style_route",
+    "fight_director",
+    "combat_beat",
+    "impact_system",
+    "vfx_power",
+    "camera_coverage",
+    "provider_route_strategy",
+    "combat_tempo",
+    "prompt_human_readable_zh",
+    "prompt_canonical_en",
+    "provider_execution_prompt",
+    "negative_constraints",
+    "asset_bindings",
+    "qc_expectations",
+    "combat_qc_score",
+    "qc_evidence"
+  ],
+  "properties": {
+    "project_id": { "type": "string", "minLength": 1 },
+    "episode_id": { "type": "string", "minLength": 1 },
+    "shot_id": { "type": "string", "minLength": 1 },
+    "is_combat_shot": { "const": true },
+    "style_route": {
+      "type": "string",
+      "enum": ["3d_guoman_cinematic", "2d_ink_anime_high_impact", "live_action_blockbuster_fight"]
+    },
+    "fight_director": {
+      "type": "object",
+      "required": [
+        "fight_intent",
+        "combatants",
+        "tactical_objective",
+        "opponent_counter_pressure",
+        "spatial_map",
+        "action_chain",
+        "result_state",
+        "risk_level",
+        "readability_plan"
+      ],
+      "properties": {
+        "fight_intent": { "type": "string", "minLength": 8 },
+        "combatants": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "oneOf": [
+              { "type": "string", "minLength": 3 },
+              {
+                "type": "object",
+                "required": ["name", "role", "state"],
+                "properties": {
+                  "name": { "type": "string", "minLength": 1 },
+                  "role": { "type": "string", "minLength": 3 },
+                  "state": { "type": "string", "minLength": 6 }
+                }
+              }
+            ]
+          }
+        },
+        "tactical_objective": { "type": "string", "minLength": 12 },
+        "opponent_counter_pressure": { "type": "string", "minLength": 12 },
+        "spatial_map": { "type": "string", "minLength": 20 },
+        "action_chain": {
+          "type": "array",
+          "minItems": 3,
+          "items": { "type": "string", "minLength": 3 }
+        },
+        "result_state": { "type": "string", "minLength": 12 },
+        "risk_level": { "type": "string", "minLength": 4 },
+        "readability_plan": { "type": "string", "minLength": 12 }
+      }
+    },
+    "combat_beat": {
+      "type": "object",
+      "required": [
+        "beat_type",
+        "screen_action",
+        "tactical_meaning",
+        "anticipation",
+        "contact_or_collision",
+        "impact_feedback",
+        "reaction",
+        "aftermath",
+        "camera_logic",
+        "vfx_logic",
+        "continuity_out"
+      ],
+      "properties": {
+        "beat_type": {
+          "type": "string",
+          "enum": [
+            "strike_exchange",
+            "weapon_clash",
+            "evade_and_counter",
+            "pressure_lock",
+            "power_release",
+            "magic_collision",
+            "avatar_manifestation",
+            "suppression_field",
+            "domain_expansion",
+            "finishing_beat",
+            "aftermath_reaction"
+          ]
+        },
+        "screen_action": { "type": "string", "minLength": 12 },
+        "tactical_meaning": { "type": "string", "minLength": 12 },
+        "anticipation": { "type": "string", "minLength": 8 },
+        "contact_or_collision": { "type": "string", "minLength": 8 },
+        "impact_feedback": { "type": "string", "minLength": 8 },
+        "reaction": { "type": "string", "minLength": 8 },
+        "aftermath": { "type": "string", "minLength": 8 },
+        "camera_logic": { "type": "string", "minLength": 8 },
+        "vfx_logic": { "type": "string", "minLength": 4 },
+        "continuity_out": { "type": "string", "minLength": 8 }
+      }
+    },
+    "impact_system": {
+      "type": "object",
+      "required": ["impact_level", "pre_impact", "contact_frame", "hitstop", "recoil", "environment_feedback", "sound_hint", "aftermath_pose"],
+      "properties": {
+        "impact_level": {
+          "type": "string",
+          "enum": ["level_1_contact", "level_2_solid_hit", "level_3_heavy_clash", "level_4_supernatural_burst", "level_5_colossal_suppression"]
+        },
+        "pre_impact": { "type": "string", "minLength": 8 },
+        "contact_frame": { "type": "string", "minLength": 8 },
+        "hitstop": { "type": "string", "minLength": 4 },
+        "recoil": { "type": "string", "minLength": 6 },
+        "environment_feedback": { "type": "string", "minLength": 6 },
+        "sound_hint": { "type": "string", "minLength": 3 },
+        "aftermath_pose": { "type": "string", "minLength": 8 }
+      }
+    },
+    "vfx_power": {
+      "type": "object",
+      "required": ["vfx_type", "source", "shape_language", "motion_behavior", "color_temperature", "interaction_with_body", "interaction_with_environment", "visibility_rule", "start_state", "peak_state", "end_state"],
+      "properties": {
+        "vfx_type": {
+          "type": "string",
+          "enum": ["none", "aura", "weapon_energy", "impact_wave", "magic_collision", "avatar_manifestation", "suppression_field", "domain_expansion"]
+        },
+        "source": { "type": "string", "minLength": 3 },
+        "shape_language": { "type": "string", "minLength": 3 },
+        "motion_behavior": { "type": "string", "minLength": 3 },
+        "color_temperature": { "type": "string", "minLength": 3 },
+        "interaction_with_body": { "type": "string", "minLength": 3 },
+        "interaction_with_environment": { "type": "string", "minLength": 3 },
+        "visibility_rule": { "type": "string", "minLength": 12 },
+        "start_state": { "type": "string", "minLength": 3 },
+        "peak_state": { "type": "string", "minLength": 3 },
+        "end_state": { "type": "string", "minLength": 3 }
+      }
+    },
+    "camera_coverage": {
+      "type": "object",
+      "required": ["shot_type", "camera_distance", "lens_feel", "camera_motion", "screen_direction", "subject_priority", "cut_point", "continuity_from_previous", "continuity_to_next"],
+      "properties": {
+        "shot_type": {
+          "type": "string",
+          "enum": ["establishing_combat_layout", "approach_charge", "exchange_medium_shot", "contact_insert", "reaction_shot", "environment_impact_shot", "power_reveal_wide", "aftermath_hold", "transition_hook"]
+        },
+        "camera_distance": { "type": "string", "minLength": 3 },
+        "lens_feel": { "type": "string", "minLength": 3 },
+        "camera_motion": { "type": "string", "minLength": 3 },
+        "screen_direction": { "type": "string", "minLength": 8 },
+        "subject_priority": { "type": "string", "minLength": 6 },
+        "cut_point": { "type": "string", "minLength": 6 },
+        "continuity_from_previous": { "type": "string", "minLength": 6 },
+        "continuity_to_next": { "type": "string", "minLength": 6 }
+      }
+    },
+    "provider_route_strategy": {
+      "type": "object",
+      "required": ["route", "route_class", "duration", "complexity_level", "reference_requirements", "first_frame_plan", "end_frame_plan", "prompt_compression_rule"],
+      "properties": {
+        "provider": { "type": "string", "minLength": 1 },
+        "model": { "type": "string", "minLength": 1 },
+        "route": {
+          "type": "string",
+          "minLength": 3,
+          "description": "Project route label chosen from the user's available tools, such as video_final_route, video_draft_route, manual_upload_route, or another confirmed provider route."
+        },
+        "route_class": {
+          "type": "string",
+          "enum": ["high_control_final", "fast_draft", "manual_upload", "package_only_dry_run", "other_confirmed_route"]
+        },
+        "duration": { "type": "string", "minLength": 2 },
+        "complexity_level": { "type": "string", "minLength": 3 },
+        "reference_requirements": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 3 }
+        },
+        "first_frame_plan": { "type": "string", "minLength": 8 },
+        "end_frame_plan": { "type": "string", "minLength": 8 },
+        "prompt_compression_rule": { "type": "string", "minLength": 12 },
+        "unsupported_controls": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 3 }
+        },
+        "fallback_route": { "type": "string", "minLength": 3 }
+      }
+    },
+    "combat_tempo": {
+      "type": "object",
+      "required": ["duration_seconds", "target_duration_policy", "key_poses", "action_events", "force_feedback", "major_traversal_window", "event_distribution", "speed_curve", "density_check"],
+      "properties": {
+        "duration_seconds": { "type": "number", "minimum": 1, "maximum": 8 },
+        "target_duration_policy": {
+          "type": "string",
+          "enum": ["ordinary_combat_2_5_to_3_5s", "readable_contact_4s", "extended_special_5s_plus", "rewrite_required"]
+        },
+        "key_poses": {
+          "type": "array",
+          "minItems": 3,
+          "items": { "type": "string", "minLength": 4 }
+        },
+        "action_events": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "type": "string", "minLength": 4 }
+        },
+        "force_feedback": { "type": "string", "minLength": 8 },
+        "major_traversal_window": { "type": "string", "minLength": 8 },
+        "event_distribution": {
+          "type": "object",
+          "required": ["frontloaded_event_ratio", "frontload_window_ratio", "ending_hold_ratio", "ending_hold_purpose"],
+          "properties": {
+            "frontloaded_event_ratio": { "type": "number", "minimum": 0.6, "maximum": 1 },
+            "frontload_window_ratio": { "type": "number", "minimum": 0.5, "maximum": 0.7 },
+            "ending_hold_ratio": { "type": "number", "minimum": 0.2, "maximum": 0.3 },
+            "ending_hold_purpose": {
+              "type": "string",
+              "enum": ["landing_pose", "reaction", "aftermath", "cut_ready_hold"]
+            }
+          }
+        },
+        "speed_curve": { "type": "string", "minLength": 12 },
+        "density_check": {
+          "type": "string",
+          "enum": ["pass", "rewrite_required"]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": { "duration_seconds": { "maximum": 2 } },
+            "required": ["duration_seconds"]
+          },
+          "then": {
+            "properties": {
+              "key_poses": { "minItems": 3 },
+              "action_events": { "minItems": 2 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "duration_seconds": { "exclusiveMinimum": 2, "maximum": 3 } },
+            "required": ["duration_seconds"]
+          },
+          "then": {
+            "properties": {
+              "key_poses": { "minItems": 4 },
+              "action_events": { "minItems": 3 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "duration_seconds": { "exclusiveMinimum": 3, "maximum": 4 } },
+            "required": ["duration_seconds"]
+          },
+          "then": {
+            "properties": {
+              "key_poses": { "minItems": 5 },
+              "action_events": { "minItems": 3 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "duration_seconds": { "minimum": 5 } },
+            "required": ["duration_seconds"]
+          },
+          "then": {
+            "properties": {
+              "key_poses": { "minItems": 6 },
+              "action_events": { "minItems": 3 }
+            }
+          }
+        }
+        ,
+        {
+          "if": {
+            "properties": { "target_duration_policy": { "const": "ordinary_combat_2_5_to_3_5s" } },
+            "required": ["target_duration_policy"]
+          },
+          "then": {
+            "properties": {
+              "duration_seconds": { "minimum": 2.5, "maximum": 3.5 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "target_duration_policy": { "const": "readable_contact_4s" } },
+            "required": ["target_duration_policy"]
+          },
+          "then": {
+            "properties": {
+              "duration_seconds": { "minimum": 3.5, "maximum": 4.5 }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": { "target_duration_policy": { "const": "extended_special_5s_plus" } },
+            "required": ["target_duration_policy"]
+          },
+          "then": {
+            "properties": {
+              "duration_seconds": { "minimum": 5, "maximum": 8 }
+            }
+          }
+        }
+      ]
+    },
+    "prompt_human_readable_zh": { "type": "string", "minLength": 12 },
+    "prompt_canonical_en": { "type": "string", "minLength": 40 },
+    "provider_execution_prompt": { "type": "string", "minLength": 80 },
+    "negative_constraints": {
+      "type": "array",
+      "minItems": 4,
+      "items": { "type": "string", "minLength": 3 }
+    },
+    "asset_bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "name"],
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": ["character_ref", "scene_ref", "prop_ref", "weapon_ref", "first_frame", "optional_end_frame", "vfx_style_ref", "reference_video", "reference_audio"]
+          },
+          "name": { "type": "string", "minLength": 1 },
+          "source_id": { "type": "string" },
+          "order": { "type": "integer", "minimum": 1 },
+          "rights_status": { "type": "string" }
+        }
+      }
+    },
+    "qc_expectations": {
+      "type": "array",
+      "minItems": 4,
+      "items": { "type": "string", "minLength": 4 }
+    },
+    "combat_qc_score": {
+      "type": "object",
+      "required": ["action_readability", "tactical_clarity", "contact_believability", "impact_feedback", "spatial_continuity", "vfx_readability", "style_consistency", "cutability"],
+      "properties": {
+        "action_readability": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "tactical_clarity": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "contact_believability": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "impact_feedback": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "spatial_continuity": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "vfx_readability": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "style_consistency": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "cutability": { "type": "integer", "minimum": 0, "maximum": 5 }
+      }
+    },
+    "qc_evidence": {
+      "type": "object",
+      "required": ["action_readability", "tactical_clarity", "contact_believability", "impact_feedback", "spatial_continuity", "vfx_readability", "style_consistency", "cutability"],
+      "properties": {
+        "action_readability": { "type": "string", "minLength": 8 },
+        "tactical_clarity": { "type": "string", "minLength": 8 },
+        "contact_believability": { "type": "string", "minLength": 8 },
+        "impact_feedback": { "type": "string", "minLength": 8 },
+        "spatial_continuity": { "type": "string", "minLength": 8 },
+        "vfx_readability": { "type": "string", "minLength": 8 },
+        "style_consistency": { "type": "string", "minLength": 8 },
+        "cutability": { "type": "string", "minLength": 8 }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "provider_route_strategy": {
+            "properties": { "route_class": { "const": "high_control_final" } },
+            "required": ["route_class"]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "asset_bindings": {
+            "type": "array",
+            "minItems": 5,
+            "allOf": [
+              {
+                "contains": {
+                  "type": "object",
+                  "properties": { "role": { "const": "character_ref" } },
+                  "required": ["role"]
+                }
+              },
+              {
+                "contains": {
+                  "type": "object",
+                  "properties": { "role": { "const": "scene_ref" } },
+                  "required": ["role"]
+                }
+              },
+              {
+                "contains": {
+                  "type": "object",
+                  "properties": { "role": { "enum": ["prop_ref", "weapon_ref"] } },
+                  "required": ["role"]
+                }
+              },
+              {
+                "contains": {
+                  "type": "object",
+                  "properties": { "role": { "const": "first_frame" } },
+                  "required": ["role"]
+                }
+              },
+              {
+                "contains": {
+                  "type": "object",
+                  "properties": { "role": { "enum": ["optional_end_frame", "vfx_style_ref"] } },
+                  "required": ["role"]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
+

@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "combat_prompt_compiler_sequence.schema.json",
+  "title": "Combat Prompt Compiler Sequence",
+  "type": "object",
+  "required": [
+    "sequence_id",
+    "project_id",
+    "episode_id",
+    "style_route",
+    "shots"
+  ],
+  "properties": {
+    "sequence_id": { "type": "string", "minLength": 1 },
+    "project_id": { "type": "string", "minLength": 1 },
+    "episode_id": { "type": "string", "minLength": 1 },
+    "style_route": {
+      "type": "string",
+      "enum": ["3d_guoman_cinematic", "2d_ink_anime_high_impact", "live_action_blockbuster_fight"]
+    },
+    "shared_asset_bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "name", "source_id", "rights_status"],
+        "properties": {
+          "role": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "source_id": { "type": "string", "minLength": 1 },
+          "order": { "type": "integer", "minimum": 1 },
+          "rights_status": { "type": "string", "minLength": 1 }
+        },
+        "additionalProperties": true
+      }
+    },
+    "shots": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "combat_prompt_compiler_output.schema.json" }
+    }
+  },
+  "additionalProperties": true
+}

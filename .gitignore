@@ -1,0 +1,15 @@
+codex_local/
+*.before-*
+*.local.*
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+model_routes.yaml
+provider_credentials.*
+project_packages/
+outputs/
+dist/
+tmp/

@@ -1,0 +1,202 @@
+{
+  "project_id": "example_project",
+  "episode_id": "ep01",
+  "shot_id": "combat_030",
+  "is_combat_shot": true,
+  "style_route": "live_action_blockbuster_fight",
+  "fight_director": {
+    "fight_intent": "close-quarters reversal in a grounded action scene",
+    "combatants": [
+      "protagonist tired but focused",
+      "larger attacker pressing forward"
+    ],
+    "tactical_objective": "redirect the attacker's forward pressure into a wall impact beat",
+    "opponent_counter_pressure": "attacker crowds the frame and forces the protagonist backward",
+    "spatial_map": "narrow corridor, protagonist screen right moving backward, attacker screen left advancing, wall on right as anchor",
+    "action_chain": [
+      "attacker rushes",
+      "protagonist pivots aside",
+      "shoulder contact redirects momentum",
+      "attacker hits wall",
+      "protagonist resets guard"
+    ],
+    "result_state": "attacker stunned against wall in PG-13 style, protagonist gains space",
+    "risk_level": "level_2_solid_hit",
+    "readability_plan": "grounded blocking, clear contact, dust from wall, reaction shot"
+  },
+  "combat_beat": {
+    "beat_type": "evade_and_counter",
+    "screen_action": "protagonist pivots off the line and redirects the attacker into the corridor wall",
+    "tactical_meaning": "smaller fighter uses timing and space rather than force",
+    "anticipation": "attacker fills foreground and drives forward",
+    "contact_or_collision": "protagonist shoulder/forearm makes brief contact to redirect",
+    "impact_feedback": "attacker shoulder hits wall, dust and framed picture shake",
+    "reaction": "attacker staggers, protagonist regains stance",
+    "aftermath": "wall dust falls and both characters reset positions",
+    "camera_logic": "stabilized handheld over-shoulder, readable axis",
+    "vfx_logic": "none, practical debris only",
+    "continuity_out": "protagonist now has clear space behind"
+  },
+  "impact_system": {
+    "impact_level": "level_2_solid_hit",
+    "pre_impact": "attacker's steps quicken and camera backs up slightly",
+    "contact_frame": "brief shoulder/forearm redirect at corridor center",
+    "hitstop": "tiny pause as attacker meets wall",
+    "recoil": "attacker bounces off wall, protagonist slides one foot to stabilize",
+    "environment_feedback": "dust from wall and picture frame shake",
+    "sound_hint": "low wall thud, cloth scrape",
+    "aftermath_pose": "protagonist guarded, attacker against wall"
+  },
+  "vfx_power": {
+    "vfx_type": "none",
+    "source": "none",
+    "shape_language": "practical dust only",
+    "motion_behavior": "none",
+    "color_temperature": "cool corridor practical light",
+    "interaction_with_body": "cloth and shoulder movement",
+    "interaction_with_environment": "wall dust and shaking frame",
+    "visibility_rule": "VFX must support action readability, not hide contact frame",
+    "start_state": "clean corridor",
+    "peak_state": "wall dust at impact",
+    "end_state": "dust settling"
+  },
+  "camera_coverage": {
+    "shot_type": "exchange_medium_shot",
+    "camera_distance": "medium close corridor coverage",
+    "lens_feel": "grounded handheld with slight compression",
+    "camera_motion": "backing handheld follow, no spin",
+    "screen_direction": "attacker advances left to right, protagonist pivots right to left",
+    "subject_priority": "attacker pressure, redirect contact, wall reaction",
+    "cut_point": "after protagonist resets guard",
+    "continuity_from_previous": "attacker begins charge from corridor end",
+    "continuity_to_next": "reaction shot can cut to protagonist breathing and listening"
+  },
+  "provider_route_strategy": {
+    "route": "video_final_route",
+    "duration": "3 seconds",
+    "complexity_level": "medium",
+    "reference_requirements": [
+      "character_ref",
+      "environment_ref",
+      "first_frame",
+      "optional_end_frame"
+    ],
+    "first_frame_plan": "attacker advancing in narrow corridor, protagonist backing up",
+    "end_frame_plan": "attacker against wall, protagonist guarded",
+    "prompt_compression_rule": "grounded action only, no real fighting instruction",
+    "provider": "user_confirmed_video_provider",
+    "model": "user_confirmed_video_model",
+    "route_class": "high_control_final",
+    "unsupported_controls": [],
+    "fallback_route": "package_only_dry_run"
+  },
+  "combat_tempo": {
+    "duration_seconds": 3.0,
+    "key_poses": [
+      "pre-contact guard set",
+      "weapon or limb enters the contact line",
+      "clear collision pose with readable overlap",
+      "brief hitstop at the contact point",
+      "recoil through shoulders and cloth",
+      "end pose preserves the next cut direction"
+    ],
+    "action_events": [
+      "attack line enters frame",
+      "guard meets the weapon or strike",
+      "impact feedback bursts outward",
+      "recoil changes advantage"
+    ],
+    "force_feedback": "hitstop, sparks or rain spray, and body recoil reveal force transfer",
+    "major_traversal_window": "major traversal, if present, completes within the first 20-40% and before midpoint",
+    "speed_curve": "anticipation, burst into contact, held impact frame, recoil, controlled end pose; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+    "density_check": "pass",
+    "target_duration_policy": "ordinary_combat_2_5_to_3_5s",
+    "event_distribution": {
+      "frontloaded_event_ratio": 0.67,
+      "frontload_window_ratio": 0.7,
+      "ending_hold_ratio": 0.25,
+      "ending_hold_purpose": "cut_ready_hold"
+    }
+  },
+  "prompt_human_readable_zh": "çœŸäººåŠ¨ä½œå¤§ç‰‡æ„Ÿï¼Œç‹­çª„èµ°å»Šå†…ä¸»è§’å€Ÿå¯¹æ‰‹å‰å†²åŽ‹åŠ›ä¾§èº«è®©çº¿ï¼ŒæŠŠå¯¹æ–¹å¸¦åˆ°å¢™é¢ï¼Œå¢™ç°å’Œç›¸æ¡†éœ‡åŠ¨è¡¨çŽ°å†²å‡»ã€‚",
+  "prompt_canonical_en": "Live-action blockbuster-style corridor fight beat, grounded screen choreography, clear redirect contact, wall dust feedback, actor reactions, no gore.",
+  "provider_execution_prompt": "Grounded live-action blockbuster-style corridor fight beat. Larger attacker advances from screen left and crowds the frame; tired protagonist backs up on screen right, then pivots off the line. One brief shoulder/forearm redirect contact sends the attacker into the right wall. Wall dust puffs, a picture frame shakes, attacker recoils, protagonist resets guard with space behind. Stabilized handheld medium close coverage, readable axis, practical debris only. No gore, no real fighting instruction, no subtitles.",
+  "negative_constraints": [
+    "no gore",
+    "no real fighting instruction",
+    "no teleporting",
+    "no excessive camera shake",
+    "no subtitles"
+  ],
+  "asset_bindings": [
+    {
+      "role": "character_ref",
+      "name": "protagonist original actor-style character reference",
+      "source_id": "asset_char_protagonist",
+      "order": 1,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "character_ref",
+      "name": "larger attacker original character reference",
+      "source_id": "asset_char_attacker",
+      "order": 2,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "scene_ref",
+      "name": "narrow corridor practical light reference",
+      "source_id": "asset_scene_corridor",
+      "order": 3,
+      "rights_status": "generated_project_asset"
+    },
+    {
+      "role": "prop_ref",
+      "name": "wall picture frame and dust feedback reference",
+      "source_id": "asset_prop_wall_frame",
+      "order": 4,
+      "rights_status": "generated_project_asset"
+    },
+    {
+      "role": "first_frame",
+      "name": "attacker advancing protagonist backing up",
+      "source_id": "frame_first_030",
+      "order": 5,
+      "rights_status": "generated_project_asset"
+    },
+    {
+      "role": "optional_end_frame",
+      "name": "attacker at wall protagonist guarded",
+      "source_id": "frame_end_030",
+      "order": 6,
+      "rights_status": "generated_project_asset"
+    }
+  ],
+  "qc_expectations": [
+    "clear corridor axis",
+    "visible redirect contact",
+    "wall feedback",
+    "actor reaction",
+    "cuttable end pose"
+  ],
+  "combat_qc_score": {
+    "action_readability": 5,
+    "tactical_clarity": 5,
+    "contact_believability": 4,
+    "impact_feedback": 4,
+    "spatial_continuity": 5,
+    "vfx_readability": 5,
+    "style_consistency": 5,
+    "cutability": 5
+  },
+  "qc_evidence": {
+    "action_readability": "Corridor axis, redirect contact, wall impact, and guard reset are visible.",
+    "tactical_clarity": "Smaller protagonist uses timing and wall position to reverse pressure.",
+    "contact_believability": "The shoulder and forearm redirect is visible before the wall thud.",
+    "impact_feedback": "Wall dust, shaking frame, recoil, and foot slide show the impact.",
+    "spatial_continuity": "The corridor wall remains the right-side anchor throughout the shot.",
+    "vfx_readability": "No abstract VFX is used; practical debris stays readable.",
+    "style_consistency": "Grounded stunt-style coverage and practical feedback fit live-action blockbuster language.",
+    "cutability": "The shot ends with both characters reset into clear positions."
+  }
+}

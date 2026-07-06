@@ -1,0 +1,154 @@
+{
+  "project_id": "example_project",
+  "episode_id": "ep01",
+  "shot_id": "combat_fast_010",
+  "is_combat_shot": true,
+  "style_route": "3d_guoman_cinematic",
+  "fight_director": {
+    "fight_intent": "quick weapon impact test",
+    "combatants": [
+      "hero with short blade",
+      "enemy with long staff"
+    ],
+    "tactical_objective": "test whether one clear weapon clash reads on a fast draft route",
+    "opponent_counter_pressure": "enemy staff presses horizontally from screen left",
+    "spatial_map": "simple side axis, hero right, enemy left, no background change",
+    "action_chain": [
+      "staff presses in",
+      "hero raises blade",
+      "weapons collide",
+      "sparks burst",
+      "both separate"
+    ],
+    "result_state": "hero blade holds center line, enemy staff rebounds",
+    "risk_level": "level_2_solid_hit",
+    "readability_plan": "one direction, one contact, one result"
+  },
+  "combat_beat": {
+    "beat_type": "weapon_clash",
+    "screen_action": "short blade blocks a staff press",
+    "tactical_meaning": "hero stops the first pressure beat",
+    "anticipation": "staff enters from screen left",
+    "contact_or_collision": "staff hits blade at center frame",
+    "impact_feedback": "small sparks and weapon vibration",
+    "reaction": "staff rebounds slightly left",
+    "aftermath": "hero remains planted",
+    "camera_logic": "locked medium shot",
+    "vfx_logic": "small sparks only",
+    "continuity_out": "hero holds center line"
+  },
+  "impact_system": {
+    "impact_level": "level_2_solid_hit",
+    "pre_impact": "staff enters from left as hero raises blade",
+    "contact_frame": "staff meets blade at center frame",
+    "hitstop": "brief readable pause",
+    "recoil": "staff rebounds, hero sleeve snaps",
+    "environment_feedback": "small sparks only",
+    "sound_hint": "short metal ring",
+    "aftermath_pose": "hero planted, enemy weapon displaced"
+  },
+  "vfx_power": {
+    "vfx_type": "none",
+    "source": "weapon contact",
+    "shape_language": "small sparks",
+    "motion_behavior": "brief outward burst",
+    "color_temperature": "warm sparks on cool background",
+    "interaction_with_body": "sleeve snap",
+    "interaction_with_environment": "none",
+    "visibility_rule": "VFX must support action readability, not hide contact frame",
+    "start_state": "no VFX",
+    "peak_state": "small spark burst",
+    "end_state": "sparks fade"
+  },
+  "camera_coverage": {
+    "shot_type": "contact_insert",
+    "camera_distance": "medium shot",
+    "lens_feel": "simple readable lens",
+    "camera_motion": "locked frame",
+    "screen_direction": "enemy pressure left to right, hero block right to left",
+    "subject_priority": "center weapon contact",
+    "cut_point": "after staff rebound",
+    "continuity_from_previous": "not required, fast draft test",
+    "continuity_to_next": "can cut to hero counter"
+  },
+  "provider_route_strategy": {
+    "route": "video_draft_route",
+    "duration": "4 seconds",
+    "complexity_level": "low",
+    "reference_requirements": [
+      "first_frame"
+    ],
+    "first_frame_plan": "simple side frame with both weapons visible before contact",
+    "end_frame_plan": "optional, not required for fast draft test",
+    "prompt_compression_rule": "starting state, one action chain, one contact, one result",
+    "provider": "user_confirmed_video_provider",
+    "model": "user_confirmed_video_model",
+    "route_class": "fast_draft",
+    "unsupported_controls": [],
+    "fallback_route": "package_only_dry_run"
+  },
+  "combat_tempo": {
+    "duration_seconds": 4.0,
+    "key_poses": [
+      "pre-contact guard set",
+      "weapon or limb enters the contact line",
+      "clear collision pose with readable overlap",
+      "brief hitstop at the contact point",
+      "recoil through shoulders and cloth",
+      "end pose preserves the next cut direction"
+    ],
+    "action_events": [
+      "attack line enters frame",
+      "guard meets the weapon or strike",
+      "impact feedback bursts outward",
+      "recoil changes advantage"
+    ],
+    "force_feedback": "hitstop, sparks or rain spray, and body recoil reveal force transfer",
+    "major_traversal_window": "short traversal or weapon entry resolves before contact; contact and reaction fill the back half",
+    "speed_curve": "anticipation, burst into contact, held impact frame, recoil, controlled end pose; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+    "density_check": "pass",
+    "target_duration_policy": "readable_contact_4s",
+    "event_distribution": {
+      "frontloaded_event_ratio": 0.67,
+      "frontload_window_ratio": 0.7,
+      "ending_hold_ratio": 0.25,
+      "ending_hold_purpose": "reaction"
+    }
+  },
+  "prompt_human_readable_zh": "Fast draft single-beat test: one side-view weapon clash with clear contact, sparks, rebound, and end pose.",
+  "prompt_canonical_en": "Simple fast draft weapon clash test: locked medium side shot, staff presses in, short blade blocks, sparks, rebound, clear result.",
+  "provider_execution_prompt": "Locked medium side shot, hero on screen right with short blade, enemy staff enters from screen left. The hero raises the blade and the staff clearly hits the blade at center frame. Small sparks burst, the staff rebounds slightly left, hero remains planted holding the center line. One action chain, one contact, one result. No camera shake, no extra hits, no VFX covering contact, no subtitles.",
+  "negative_constraints": [
+    "no camera shake",
+    "no extra hits",
+    "no VFX covering contact",
+    "no subtitles"
+  ],
+  "asset_bindings": [],
+  "qc_expectations": [
+    "one contact only",
+    "center contact visible",
+    "staff rebound",
+    "hero planted"
+  ],
+  "combat_qc_score": {
+    "action_readability": 5,
+    "tactical_clarity": 4,
+    "contact_believability": 4,
+    "impact_feedback": 4,
+    "spatial_continuity": 5,
+    "vfx_readability": 5,
+    "style_consistency": 4,
+    "cutability": 5
+  },
+  "qc_evidence": {
+    "action_readability": "Fast draft prompt uses locked frame, one staff entry, one blade block, and one rebound.",
+    "tactical_clarity": "The test objective is only to prove a readable weapon clash.",
+    "contact_believability": "Staff hits the blade at center frame before sparks appear.",
+    "impact_feedback": "Small sparks, staff rebound, and sleeve snap mark the impact.",
+    "spatial_continuity": "Enemy pressure remains left-to-right and hero block remains right-to-left.",
+    "vfx_readability": "Only small sparks are allowed, so VFX cannot hide contact.",
+    "style_consistency": "The style remains simple 3D guoman draft language for a fast draft test.",
+    "cutability": "The planted hero end pose can cut into a counter shot."
+  }
+}

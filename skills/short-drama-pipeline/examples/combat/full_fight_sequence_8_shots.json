@@ -1,0 +1,1593 @@
+{
+  "sequence_id": "example_full_fight_8_shots",
+  "project_id": "example_project",
+  "episode_id": "ep01",
+  "style_route": "3d_guoman_cinematic",
+  "shared_asset_bindings": [
+    {
+      "role": "character_ref",
+      "name": "hero fictional cultivator reference",
+      "source_id": "asset_char_hero",
+      "order": 1,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "character_ref",
+      "name": "enemy spear guardian reference",
+      "source_id": "asset_char_enemy",
+      "order": 2,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "scene_ref",
+      "name": "rain courtyard with stone stairs",
+      "source_id": "asset_scene_courtyard",
+      "order": 3,
+      "rights_status": "generated_project_asset"
+    },
+    {
+      "role": "weapon_ref",
+      "name": "short sword and long spear reference",
+      "source_id": "asset_weapon_pair",
+      "order": 4,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "first_frame",
+      "name": "sequence opening layout frame",
+      "source_id": "frame_seq_first",
+      "order": 5,
+      "rights_status": "generated_project_asset"
+    },
+    {
+      "role": "vfx_style_ref",
+      "name": "gold suppression floor seal style",
+      "source_id": "asset_vfx_gold_seal",
+      "order": 6,
+      "rights_status": "generated_project_asset"
+    }
+  ],
+  "shots": [
+    {
+      "project_id": "example_project",
+      "episode_id": "ep01",
+      "shot_id": "seq08_01_layout",
+      "sequence_role": "establishing_combat_layout",
+      "is_combat_shot": true,
+      "style_route": "3d_guoman_cinematic",
+      "fight_director": {
+        "fight_intent": "establish the unequal battlefield and pressure direction",
+        "combatants": [
+          "hero lower right wounded but standing",
+          "enemy higher left with long spear"
+        ],
+        "tactical_objective": "show that the hero must cross distance under spear pressure",
+        "opponent_counter_pressure": "enemy owns the higher stairs and keeps spear reach pointed downward",
+        "spatial_map": "rain courtyard, hero screen right lower level, enemy screen left upper stairs, pillars and wet floor as anchors",
+        "action_chain": [
+          "wide layout reveals distance",
+          "enemy spear points down",
+          "hero shifts weight forward"
+        ],
+        "result_state": "viewer understands left-right axis and vertical disadvantage before the charge",
+        "risk_level": "level_1_contact setup",
+        "readability_plan": "silent viewer can read who is higher, who is pressured, and where movement must go"
+      },
+      "combat_beat": {
+        "beat_type": "pressure_lock",
+        "screen_action": "enemy holds upper-left space while hero prepares at lower-right edge",
+        "tactical_meaning": "the shot defines the problem before action begins",
+        "anticipation": "rain falls through the empty distance between them",
+        "contact_or_collision": "no contact yet; spear line threatens the center lane",
+        "impact_feedback": "pressure is shown by spear shadow and hero's compressed stance",
+        "reaction": "hero narrows stance and watches the spear tip",
+        "aftermath": "the distance line is set for the next approach",
+        "camera_logic": "wide low layout, locked axis",
+        "vfx_logic": "none except wet reflections",
+        "continuity_out": "hero remains lower right, enemy remains upper left"
+      },
+      "impact_system": {
+        "impact_level": "level_1_contact",
+        "pre_impact": "empty rain distance and spear shadow create threat",
+        "contact_frame": "no physical contact in this layout shot",
+        "hitstop": "brief held wide frame",
+        "recoil": "none yet, only clothing moved by rain wind",
+        "environment_feedback": "wet floor reflects both fighters",
+        "sound_hint": "distant rain and low tension only",
+        "aftermath_pose": "hero low right ready to move, enemy high left controlling lane"
+      },
+      "vfx_power": {
+        "vfx_type": "none",
+        "source": "none",
+        "shape_language": "wet reflection only",
+        "motion_behavior": "rain fall",
+        "color_temperature": "cold blue night",
+        "interaction_with_body": "cloth lightly moves",
+        "interaction_with_environment": "rain and reflections define depth",
+        "visibility_rule": "VFX must support action readability, not hide contact frame",
+        "start_state": "clear space",
+        "peak_state": "clear space",
+        "end_state": "clear space"
+      },
+      "camera_coverage": {
+        "shot_type": "establishing_combat_layout",
+        "camera_distance": "wide low angle",
+        "lens_feel": "wide depth with stairs and wet floor",
+        "camera_motion": "locked slow push",
+        "screen_direction": "future hero movement goes right to left and upward",
+        "subject_priority": "battlefield relation first, spear threat second, hero readiness third",
+        "cut_point": "cut when hero leans forward",
+        "continuity_from_previous": "sequence begins here",
+        "continuity_to_next": "next shot starts with hero charging from lower right toward upper left"
+      },
+      "provider_route_strategy": {
+        "route": "video_final_route",
+        "duration": "5 seconds",
+        "complexity_level": "medium",
+        "reference_requirements": [
+          "character_ref",
+          "scene_ref",
+          "weapon_ref",
+          "first_frame",
+          "vfx_style_ref"
+        ],
+        "first_frame_plan": "wide layout frame with hero low right and enemy high left",
+        "end_frame_plan": "hero leaning forward from lower right",
+        "prompt_compression_rule": "show spatial relation and pressure, no combat contact yet",
+        "provider": "user_confirmed_video_provider",
+        "model": "user_confirmed_video_model",
+        "route_class": "high_control_final",
+        "unsupported_controls": [],
+        "fallback_route": "package_only_dry_run"
+      },
+      "combat_tempo": {
+        "duration_seconds": 5.0,
+        "key_poses": [
+          "enemy holds dominant high line",
+          "hero stays low in opposite screen side",
+          "rain and floor reflections reveal distance",
+          "weapon line points across the gap",
+          "hero shifts weight toward first move",
+          "extra readable key pose for tempo density"
+        ],
+        "action_events": [
+          "layout reveals both combatants and route",
+          "enemy pressure line narrows the safe path",
+          "hero prepares a low entry"
+        ],
+        "force_feedback": "rain, weapon angle, and body crouch show pressure before contact",
+        "major_traversal_window": "extended duration is justified by environment reveal, power reveal, aftermath, or readable hold",
+        "speed_curve": "held pressure, small weight shift, ready-to-burst ending; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+        "density_check": "pass",
+        "target_duration_policy": "extended_special_5s_plus",
+        "event_distribution": {
+          "frontloaded_event_ratio": 0.67,
+          "frontload_window_ratio": 0.7,
+          "ending_hold_ratio": 0.25,
+          "ending_hold_purpose": "cut_ready_hold"
+        }
+      },
+      "prompt_human_readable_zh": "é›¨å¤œçŸ³åº­å¤§è¿œæ™¯ï¼Œæ•Œäººåœ¨å·¦ä¾§é«˜å°ä»¥é•¿æžªåŽ‹ä½ç©ºé—´ï¼Œä¸»è§’åœ¨å³ä¾§ä½Žä½å‡†å¤‡å†²å…¥ã€‚",
+      "prompt_canonical_en": "3D guoman cinematic rain courtyard layout, enemy high left with spear pressure, hero low right preparing to cross the wet stone distance.",
+      "provider_execution_prompt": "Wide low-angle rain courtyard at night. Hero stands lower on screen right in a compressed stance, enemy spear guardian is higher on screen left at the stairs, spear tip aimed down across the center lane. Wet stone floor and broken pillars show distance and depth. Slow locked push only, no contact yet; end as the hero leans forward to charge. No gore, no teleporting, no subtitles, no UI.",
+      "negative_constraints": [
+        "no gore",
+        "no teleporting",
+        "no contact yet",
+        "no subtitles"
+      ],
+      "asset_bindings": [
+        {
+          "role": "character_ref",
+          "name": "hero reference",
+          "source_id": "asset_char_hero",
+          "order": 1,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "scene_ref",
+          "name": "rain courtyard",
+          "source_id": "asset_scene_courtyard",
+          "order": 2,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "weapon_ref",
+          "name": "spear and sword",
+          "source_id": "asset_weapon_pair",
+          "order": 3,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "first_frame",
+          "name": "wide layout frame",
+          "source_id": "frame_seq_first",
+          "order": 4,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "vfx_style_ref",
+          "name": "wet blue night style",
+          "source_id": "asset_vfx_rain_style",
+          "order": 5,
+          "rights_status": "generated_project_asset"
+        }
+      ],
+      "qc_expectations": [
+        "axis is clear",
+        "height disadvantage is visible",
+        "spear threat is readable",
+        "next charge direction is set"
+      ],
+      "combat_qc_score": {
+        "action_readability": 5,
+        "tactical_clarity": 5,
+        "contact_believability": 5,
+        "impact_feedback": 4,
+        "spatial_continuity": 5,
+        "vfx_readability": 5,
+        "style_consistency": 5,
+        "cutability": 5
+      },
+      "qc_evidence": {
+        "action_readability": "The shot is a clean layout with no overloaded action.",
+        "tactical_clarity": "The hero's problem is crossing upward under spear pressure.",
+        "contact_believability": "No contact is attempted, so the shot avoids fake contact.",
+        "impact_feedback": "Pressure is visualized by spear shadow and compressed stance.",
+        "spatial_continuity": "Left/right and vertical levels are clearly assigned.",
+        "vfx_readability": "Rain and reflections do not obscure the fighters.",
+        "style_consistency": "The shot uses 3D guoman depth, rain, and stone courtyard scale.",
+        "cutability": "The forward lean gives a clean cut into the charge."
+      }
+    },
+    {
+      "project_id": "example_project",
+      "episode_id": "ep01",
+      "shot_id": "seq08_02_approach",
+      "sequence_role": "approach_charge",
+      "is_combat_shot": true,
+      "style_route": "3d_guoman_cinematic",
+      "fight_director": {
+        "fight_intent": "show the hero choosing a low inside route",
+        "combatants": [
+          "hero charging from lower right",
+          "enemy tracking from upper left"
+        ],
+        "tactical_objective": "enter under the spear line without losing the established axis",
+        "opponent_counter_pressure": "enemy lowers the spear to intercept the charge",
+        "spatial_map": "hero travels right to left along wet floor, enemy stays high left, camera keeps the same side",
+        "action_chain": [
+          "hero pushes off puddle",
+          "cloak snaps backward",
+          "enemy lowers spear",
+          "hero ducks under the spear line"
+        ],
+        "result_state": "hero reaches the inside lane near the spear shaft",
+        "risk_level": "level_1_contact approach",
+        "readability_plan": "movement direction remains right to left and enemy does not teleport"
+      },
+      "combat_beat": {
+        "beat_type": "evade_and_counter",
+        "screen_action": "hero charges low and slips under the descending spear path",
+        "tactical_meaning": "the hero sacrifices height to get inside weapon reach",
+        "anticipation": "puddle ripples as the hero pushes off",
+        "contact_or_collision": "near-miss under the spear line, no weapon contact yet",
+        "impact_feedback": "cloak and rain trail show speed without hiding body",
+        "reaction": "enemy begins to pull spear inward to recover",
+        "aftermath": "hero arrives close enough for the next clash",
+        "camera_logic": "low tracking side follow",
+        "vfx_logic": "rain streaks only",
+        "continuity_out": "hero is now near center-right below the spear shaft"
+      },
+      "impact_system": {
+        "impact_level": "level_1_contact",
+        "pre_impact": "hero compresses then pushes from the puddle",
+        "contact_frame": "spear passes just above hero shoulder as near-miss",
+        "hitstop": "no hitstop, only a readable near-miss beat",
+        "recoil": "enemy spear tip overshoots slightly",
+        "environment_feedback": "puddle splash and rain streaks show speed",
+        "sound_hint": "foot splash and cloth snap",
+        "aftermath_pose": "hero crouched inside the spear reach"
+      },
+      "vfx_power": {
+        "vfx_type": "none",
+        "source": "none",
+        "shape_language": "rain streak and cloth motion",
+        "motion_behavior": "right-to-left streaks",
+        "color_temperature": "cold blue night",
+        "interaction_with_body": "cloak follows the charge",
+        "interaction_with_environment": "puddle splashes behind foot",
+        "visibility_rule": "VFX must support action readability, not hide contact frame",
+        "start_state": "still puddle",
+        "peak_state": "splash trail",
+        "end_state": "hero inside spear line"
+      },
+      "camera_coverage": {
+        "shot_type": "approach_charge",
+        "camera_distance": "low medium tracking",
+        "lens_feel": "wide enough for body and spear",
+        "camera_motion": "tracking right to left",
+        "screen_direction": "hero continues right to left toward enemy",
+        "subject_priority": "hero route first, spear near-miss second, enemy recovery third",
+        "cut_point": "cut as hero reaches the spear shaft",
+        "continuity_from_previous": "inherits hero lower right leaning forward",
+        "continuity_to_next": "next shot begins with hero under the spear line at center"
+      },
+      "provider_route_strategy": {
+        "route": "video_final_route",
+        "duration": "3 seconds",
+        "complexity_level": "medium",
+        "reference_requirements": [
+          "character_ref",
+          "scene_ref",
+          "weapon_ref",
+          "first_frame",
+          "vfx_style_ref"
+        ],
+        "first_frame_plan": "hero starts lower right after layout",
+        "end_frame_plan": "hero crouched under spear near center",
+        "prompt_compression_rule": "one approach, one near-miss, one inside-lane result",
+        "provider": "user_confirmed_video_provider",
+        "model": "user_confirmed_video_model",
+        "route_class": "high_control_final",
+        "unsupported_controls": [],
+        "fallback_route": "package_only_dry_run"
+      },
+      "combat_tempo": {
+        "duration_seconds": 3.0,
+        "key_poses": [
+          "push-off from original mark with shoulders forward",
+          "explosive acceleration crosses half the frame early",
+          "abrupt low weight drop under the weapon line",
+          "side slip with cloak and rain trailing behind",
+          "short blade knocks the weapon aside",
+          "inside-line landing ready for next contact"
+        ],
+        "action_events": [
+          "instant dash covers the distance before midpoint",
+          "enemy counter-pressure blocks the route",
+          "low dodge changes the attack line",
+          "weapon deflection opens the inside line"
+        ],
+        "force_feedback": "weapon deflection and wet floor skid show force transfer",
+        "major_traversal_window": "major traversal, if present, completes within the first 20-40% and before midpoint",
+        "speed_curve": "slow threat beat, violent forward burst, quick dodge, brief contact hitstop, sharp landing; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+        "density_check": "pass",
+        "target_duration_policy": "ordinary_combat_2_5_to_3_5s",
+        "event_distribution": {
+          "frontloaded_event_ratio": 0.67,
+          "frontload_window_ratio": 0.7,
+          "ending_hold_ratio": 0.25,
+          "ending_hold_purpose": "cut_ready_hold"
+        }
+      },
+      "prompt_human_readable_zh": "ä¸»è§’ä»Žå³ä½Žä½è´´åœ°å†²å…¥ï¼Œé¿å¼€é•¿æžªä¸‹åŽ‹ï¼Œè¿›å…¥æžªæ†å†…ä¾§ã€‚",
+      "prompt_canonical_en": "Hero charges low from lower right to center, ducking under the enemy spear line in the same rain courtyard axis.",
+      "provider_execution_prompt": "Low tracking side shot in the same rain courtyard. Hero pushes off from a puddle at lower screen right and charges right-to-left, cloak snapping back. Enemy remains upper left and lowers the spear to intercept. The spear passes just above the hero's shoulder as a clear near-miss; hero ducks under and ends crouched inside the spear reach near center. One approach, one near-miss, one result. No teleporting, no extra clash, no subtitles, no full-screen blur.",
+      "negative_constraints": [
+        "no teleporting",
+        "no extra clash",
+        "no subtitles",
+        "no full-screen blur"
+      ],
+      "asset_bindings": [
+        {
+          "role": "character_ref",
+          "name": "hero reference",
+          "source_id": "asset_char_hero",
+          "order": 1,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "scene_ref",
+          "name": "rain courtyard",
+          "source_id": "asset_scene_courtyard",
+          "order": 2,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "weapon_ref",
+          "name": "spear and sword",
+          "source_id": "asset_weapon_pair",
+          "order": 3,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "first_frame",
+          "name": "charge start frame",
+          "source_id": "frame_seq_02_first",
+          "order": 4,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "optional_end_frame",
+          "name": "inside spear line end frame",
+          "source_id": "frame_seq_02_end",
+          "order": 5,
+          "rights_status": "generated_project_asset"
+        }
+      ],
+      "qc_expectations": [
+        "same axis as shot 1",
+        "near-miss visible",
+        "hero ends inside spear reach",
+        "enemy remains upper left"
+      ],
+      "combat_qc_score": {
+        "action_readability": 5,
+        "tactical_clarity": 5,
+        "contact_believability": 5,
+        "impact_feedback": 4,
+        "spatial_continuity": 5,
+        "vfx_readability": 5,
+        "style_consistency": 5,
+        "cutability": 5
+      },
+      "qc_evidence": {
+        "action_readability": "One approach route and one near-miss are visible.",
+        "tactical_clarity": "Hero moves low to enter inside spear reach.",
+        "contact_believability": "The shot uses near-miss instead of fake contact.",
+        "impact_feedback": "Puddle splash and cloak snap show speed.",
+        "spatial_continuity": "Hero continues right-to-left from the layout.",
+        "vfx_readability": "Rain streaks do not hide the body route.",
+        "style_consistency": "Low tracking and wet courtyard keep 3D guoman style.",
+        "cutability": "End pose sets up center-frame weapon clash."
+      }
+    },
+    {
+      "project_id": "example_project",
+      "episode_id": "ep01",
+      "shot_id": "seq08_03_weapon_clash",
+      "sequence_role": "weapon_clash",
+      "is_combat_shot": true,
+      "style_route": "3d_guoman_cinematic",
+      "fight_director": {
+        "fight_intent": "Hero blade catches the spear shaft at center frame",
+        "combatants": [
+          "hero charging from lower right",
+          "enemy tracking from upper left"
+        ],
+        "tactical_objective": "complete this shot role: weapon_clash",
+        "opponent_counter_pressure": "enemy resists through spear pressure, height, armor weight, and recovery timing",
+        "spatial_map": "same rain courtyard axis, hero remains center-right/right-to-left, enemy remains screen left near stairs",
+        "action_chain": [
+          "inherit previous state",
+          "Hero blade catches the spear shaft at center frame",
+          "end with contact insert starts on crossed weapons"
+        ],
+        "result_state": "contact insert starts on crossed weapons",
+        "risk_level": "level_1_contact approach",
+        "readability_plan": "show one action purpose, one contact or reaction, one stable result for silent autoplay"
+      },
+      "combat_beat": {
+        "beat_type": "weapon_clash",
+        "screen_action": "Hero blade catches the spear shaft at center frame",
+        "tactical_meaning": "this beat advances the fight from hero under spear line at center toward contact insert starts on crossed weapons",
+        "anticipation": "brief hold from previous continuity state before movement",
+        "contact_or_collision": "visible contact, reaction, or force boundary appropriate to weapon_clash",
+        "impact_feedback": "rain spray, weapon vibration, floor glow, debris, or posture change marks feedback",
+        "reaction": "enemy reaction occurs after the contact or pressure cue",
+        "aftermath": "end state is stable and readable for the next shot",
+        "camera_logic": "camera prioritizes weapon_clash and avoids hiding contact",
+        "vfx_logic": "VFX supports readability and stays attached to source/contact/floor",
+        "continuity_out": "contact insert starts on crossed weapons"
+      },
+      "impact_system": {
+        "impact_level": "level_3_heavy_clash",
+        "pre_impact": "inherits hero under spear line at center with a short readable hold",
+        "contact_frame": "clear frame for Hero blade catches the spear shaft at center frame",
+        "hitstop": "brief readable hold",
+        "recoil": "weapon, cloth, armor, or posture reacts after the beat",
+        "environment_feedback": "wet floor, rain spray, sparks, dust, floor seal, or settling debris responds",
+        "sound_hint": "foot splash and cloth snap",
+        "aftermath_pose": "contact insert starts on crossed weapons"
+      },
+      "vfx_power": {
+        "vfx_type": "impact_wave",
+        "source": "weapon contact or hero seal depending on beat",
+        "shape_language": "gold floor geometry, rain spray, sparks, and clean silhouettes",
+        "motion_behavior": "appears at source, peaks briefly, then clears contact area",
+        "color_temperature": "cold blue night",
+        "interaction_with_body": "cloth, armor, and posture respond without hiding faces",
+        "interaction_with_environment": "wet floor, debris, rain, and light reflections react",
+        "visibility_rule": "VFX must support action readability, not hide contact frame",
+        "start_state": "hero under spear line at center",
+        "peak_state": "Hero blade catches the spear shaft at center frame",
+        "end_state": "contact insert starts on crossed weapons"
+      },
+      "camera_coverage": {
+        "shot_type": "exchange_medium_shot",
+        "camera_distance": "medium readable coverage",
+        "lens_feel": "wide enough for body and spear",
+        "camera_motion": "locked or slight tracking, never full orbit during contact",
+        "screen_direction": "preserve hero right-to-left pressure and enemy left-side position",
+        "subject_priority": "weapon_clash first, continuity second, VFX third",
+        "cut_point": "cut after contact insert starts on crossed weapons",
+        "continuity_from_previous": "hero under spear line at center",
+        "continuity_to_next": "contact insert starts on crossed weapons"
+      },
+      "provider_route_strategy": {
+        "route": "video_final_route",
+        "duration": "4 seconds",
+        "complexity_level": "medium",
+        "reference_requirements": [
+          "character_ref",
+          "scene_ref",
+          "weapon_ref",
+          "first_frame",
+          "vfx_style_ref"
+        ],
+        "first_frame_plan": "hero under spear line at center",
+        "end_frame_plan": "contact insert starts on crossed weapons",
+        "prompt_compression_rule": "one approach, one near-miss, one inside-lane result",
+        "provider": "user_confirmed_video_provider",
+        "model": "user_confirmed_video_model",
+        "route_class": "high_control_final",
+        "unsupported_controls": [],
+        "fallback_route": "package_only_dry_run"
+      },
+      "combat_tempo": {
+        "duration_seconds": 4.0,
+        "key_poses": [
+          "pre-contact guard set",
+          "weapon or limb enters the contact line",
+          "clear collision pose with readable overlap",
+          "brief hitstop at the contact point",
+          "recoil through shoulders and cloth",
+          "end pose preserves the next cut direction"
+        ],
+        "action_events": [
+          "attack line enters frame",
+          "guard meets the weapon or strike",
+          "impact feedback bursts outward",
+          "recoil changes advantage"
+        ],
+        "force_feedback": "hitstop, sparks or rain spray, and body recoil reveal force transfer",
+        "major_traversal_window": "short traversal or weapon entry resolves before contact; contact and reaction fill the back half",
+        "speed_curve": "anticipation, burst into contact, held impact frame, recoil, controlled end pose; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+        "density_check": "pass",
+        "target_duration_policy": "readable_contact_4s",
+        "event_distribution": {
+          "frontloaded_event_ratio": 0.67,
+          "frontload_window_ratio": 0.7,
+          "ending_hold_ratio": 0.25,
+          "ending_hold_purpose": "reaction"
+        }
+      },
+      "prompt_human_readable_zh": "?3??Hero blade catches the spear shaft at center frame?",
+      "prompt_canonical_en": "3D guoman rain courtyard shot 3: Hero blade catches the spear shaft at center frame. Preserve the same left-right axis and readable contact/reaction.",
+      "provider_execution_prompt": "3D guoman cinematic rain courtyard. Hero blade catches the spear shaft at center frame. Preserve continuity from previous shot: hero under spear line at center. Keep hero center-right or moving right-to-left and enemy on screen left near the stairs. Show one readable contact, reaction, or pressure cue, then end with contact insert starts on crossed weapons. Use one controlled camera behavior, clear wet-floor feedback, no teleporting, no gore, no subtitles, no VFX covering the contact frame.",
+      "negative_constraints": [
+        "no gore",
+        "no teleporting",
+        "no VFX covering contact",
+        "no subtitles"
+      ],
+      "asset_bindings": [
+        {
+          "role": "character_ref",
+          "name": "hero reference",
+          "source_id": "asset_char_hero",
+          "order": 1,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "scene_ref",
+          "name": "rain courtyard",
+          "source_id": "asset_scene_courtyard",
+          "order": 2,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "weapon_ref",
+          "name": "spear and sword",
+          "source_id": "asset_weapon_pair",
+          "order": 3,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "first_frame",
+          "name": "charge start frame",
+          "source_id": "frame_seq_02_first",
+          "order": 4,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "optional_end_frame",
+          "name": "inside spear line end frame",
+          "source_id": "frame_seq_02_end",
+          "order": 5,
+          "rights_status": "generated_project_asset"
+        }
+      ],
+      "qc_expectations": [
+        "continuity from previous is visible",
+        "one primary beat only",
+        "contact or reaction is readable",
+        "continuity to next is explicit"
+      ],
+      "combat_qc_score": {
+        "action_readability": 5,
+        "tactical_clarity": 5,
+        "contact_believability": 5,
+        "impact_feedback": 5,
+        "spatial_continuity": 5,
+        "vfx_readability": 5,
+        "style_consistency": 5,
+        "cutability": 5
+      },
+      "qc_evidence": {
+        "action_readability": "Visible evidence for action_readability is specified in action, camera, continuity, and end state.",
+        "tactical_clarity": "Visible evidence for tactical_clarity is specified in action, camera, continuity, and end state.",
+        "contact_believability": "Visible evidence for contact_believability is specified in action, camera, continuity, and end state.",
+        "impact_feedback": "Visible evidence for impact_feedback is specified in action, camera, continuity, and end state.",
+        "spatial_continuity": "Visible evidence for spatial_continuity is specified in action, camera, continuity, and end state.",
+        "vfx_readability": "Visible evidence for vfx_readability is specified in action, camera, continuity, and end state.",
+        "style_consistency": "Visible evidence for style_consistency is specified in action, camera, continuity, and end state.",
+        "cutability": "Visible evidence for cutability is specified in action, camera, continuity, and end state."
+      }
+    },
+    {
+      "project_id": "example_project",
+      "episode_id": "ep01",
+      "shot_id": "seq08_04_contact_insert",
+      "sequence_role": "contact_insert",
+      "is_combat_shot": true,
+      "style_route": "3d_guoman_cinematic",
+      "fight_director": {
+        "fight_intent": "Close insert: sword spine and spear shaft collide with sparks",
+        "combatants": [
+          "hero charging from lower right",
+          "enemy tracking from upper left"
+        ],
+        "tactical_objective": "complete this shot role: contact_insert",
+        "opponent_counter_pressure": "enemy resists through spear pressure, height, armor weight, and recovery timing",
+        "spatial_map": "same rain courtyard axis, hero remains center-right/right-to-left, enemy remains screen left near stairs",
+        "action_chain": [
+          "inherit previous state",
+          "Close insert: sword spine and spear shaft collide with sparks",
+          "end with reaction shot begins after spear rebounds"
+        ],
+        "result_state": "reaction shot begins after spear rebounds",
+        "risk_level": "level_1_contact approach",
+        "readability_plan": "show one action purpose, one contact or reaction, one stable result for silent autoplay"
+      },
+      "combat_beat": {
+        "beat_type": "weapon_clash",
+        "screen_action": "Close insert: sword spine and spear shaft collide with sparks",
+        "tactical_meaning": "this beat advances the fight from crossed weapons from shot 3 toward reaction shot begins after spear rebounds",
+        "anticipation": "brief hold from previous continuity state before movement",
+        "contact_or_collision": "visible contact, reaction, or force boundary appropriate to contact_insert",
+        "impact_feedback": "rain spray, weapon vibration, floor glow, debris, or posture change marks feedback",
+        "reaction": "enemy reaction occurs after the contact or pressure cue",
+        "aftermath": "end state is stable and readable for the next shot",
+        "camera_logic": "camera prioritizes contact_insert and avoids hiding contact",
+        "vfx_logic": "VFX supports readability and stays attached to source/contact/floor",
+        "continuity_out": "reaction shot begins after spear rebounds"
+      },
+      "impact_system": {
+        "impact_level": "level_3_heavy_clash",
+        "pre_impact": "inherits crossed weapons from shot 3 with a short readable hold",
+        "contact_frame": "clear frame for Close insert: sword spine and spear shaft collide with sparks",
+        "hitstop": "brief readable hold",
+        "recoil": "weapon, cloth, armor, or posture reacts after the beat",
+        "environment_feedback": "wet floor, rain spray, sparks, dust, floor seal, or settling debris responds",
+        "sound_hint": "foot splash and cloth snap",
+        "aftermath_pose": "reaction shot begins after spear rebounds"
+      },
+      "vfx_power": {
+        "vfx_type": "impact_wave",
+        "source": "weapon contact or hero seal depending on beat",
+        "shape_language": "gold floor geometry, rain spray, sparks, and clean silhouettes",
+        "motion_behavior": "appears at source, peaks briefly, then clears contact area",
+        "color_temperature": "cold blue night",
+        "interaction_with_body": "cloth, armor, and posture respond without hiding faces",
+        "interaction_with_environment": "wet floor, debris, rain, and light reflections react",
+        "visibility_rule": "VFX must support action readability, not hide contact frame",
+        "start_state": "crossed weapons from shot 3",
+        "peak_state": "Close insert: sword spine and spear shaft collide with sparks",
+        "end_state": "reaction shot begins after spear rebounds"
+      },
+      "camera_coverage": {
+        "shot_type": "contact_insert",
+        "camera_distance": "close insert",
+        "lens_feel": "wide enough for body and spear",
+        "camera_motion": "locked or slight tracking, never full orbit during contact",
+        "screen_direction": "preserve hero right-to-left pressure and enemy left-side position",
+        "subject_priority": "contact_insert first, continuity second, VFX third",
+        "cut_point": "cut after reaction shot begins after spear rebounds",
+        "continuity_from_previous": "crossed weapons from shot 3",
+        "continuity_to_next": "reaction shot begins after spear rebounds"
+      },
+      "provider_route_strategy": {
+        "route": "video_final_route",
+        "duration": "4 seconds",
+        "complexity_level": "medium",
+        "reference_requirements": [
+          "character_ref",
+          "scene_ref",
+          "weapon_ref",
+          "first_frame",
+          "vfx_style_ref"
+        ],
+        "first_frame_plan": "crossed weapons from shot 3",
+        "end_frame_plan": "reaction shot begins after spear rebounds",
+        "prompt_compression_rule": "one approach, one near-miss, one inside-lane result",
+        "provider": "user_confirmed_video_provider",
+        "model": "user_confirmed_video_model",
+        "route_class": "high_control_final",
+        "unsupported_controls": [],
+        "fallback_route": "package_only_dry_run"
+      },
+      "combat_tempo": {
+        "duration_seconds": 4.0,
+        "key_poses": [
+          "pre-contact guard set",
+          "weapon or limb enters the contact line",
+          "clear collision pose with readable overlap",
+          "brief hitstop at the contact point",
+          "recoil through shoulders and cloth",
+          "end pose preserves the next cut direction"
+        ],
+        "action_events": [
+          "attack line enters frame",
+          "guard meets the weapon or strike",
+          "impact feedback bursts outward",
+          "recoil changes advantage"
+        ],
+        "force_feedback": "hitstop, sparks or rain spray, and body recoil reveal force transfer",
+        "major_traversal_window": "short traversal or weapon entry resolves before contact; contact and reaction fill the back half",
+        "speed_curve": "anticipation, burst into contact, held impact frame, recoil, controlled end pose; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+        "density_check": "pass",
+        "target_duration_policy": "readable_contact_4s",
+        "event_distribution": {
+          "frontloaded_event_ratio": 0.67,
+          "frontload_window_ratio": 0.7,
+          "ending_hold_ratio": 0.25,
+          "ending_hold_purpose": "reaction"
+        }
+      },
+      "prompt_human_readable_zh": "?4??Close insert: sword spine and spear shaft collide with sparks?",
+      "prompt_canonical_en": "3D guoman rain courtyard shot 4: Close insert: sword spine and spear shaft collide with sparks. Preserve the same left-right axis and readable contact/reaction.",
+      "provider_execution_prompt": "3D guoman cinematic rain courtyard. Close insert: sword spine and spear shaft collide with sparks. Preserve continuity from previous shot: crossed weapons from shot 3. Keep hero center-right or moving right-to-left and enemy on screen left near the stairs. Show one readable contact, reaction, or pressure cue, then end with reaction shot begins after spear rebounds. Use one controlled camera behavior, clear wet-floor feedback, no teleporting, no gore, no subtitles, no VFX covering the contact frame.",
+      "negative_constraints": [
+        "no gore",
+        "no teleporting",
+        "no VFX covering contact",
+        "no subtitles"
+      ],
+      "asset_bindings": [
+        {
+          "role": "character_ref",
+          "name": "hero reference",
+          "source_id": "asset_char_hero",
+          "order": 1,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "scene_ref",
+          "name": "rain courtyard",
+          "source_id": "asset_scene_courtyard",
+          "order": 2,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "weapon_ref",
+          "name": "spear and sword",
+          "source_id": "asset_weapon_pair",
+          "order": 3,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "first_frame",
+          "name": "charge start frame",
+          "source_id": "frame_seq_02_first",
+          "order": 4,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "optional_end_frame",
+          "name": "inside spear line end frame",
+          "source_id": "frame_seq_02_end",
+          "order": 5,
+          "rights_status": "generated_project_asset"
+        }
+      ],
+      "qc_expectations": [
+        "continuity from previous is visible",
+        "one primary beat only",
+        "contact or reaction is readable",
+        "continuity to next is explicit"
+      ],
+      "combat_qc_score": {
+        "action_readability": 5,
+        "tactical_clarity": 5,
+        "contact_believability": 5,
+        "impact_feedback": 5,
+        "spatial_continuity": 5,
+        "vfx_readability": 5,
+        "style_consistency": 5,
+        "cutability": 5
+      },
+      "qc_evidence": {
+        "action_readability": "Visible evidence for action_readability is specified in action, camera, continuity, and end state.",
+        "tactical_clarity": "Visible evidence for tactical_clarity is specified in action, camera, continuity, and end state.",
+        "contact_believability": "Visible evidence for contact_believability is specified in action, camera, continuity, and end state.",
+        "impact_feedback": "Visible evidence for impact_feedback is specified in action, camera, continuity, and end state.",
+        "spatial_continuity": "Visible evidence for spatial_continuity is specified in action, camera, continuity, and end state.",
+        "vfx_readability": "Visible evidence for vfx_readability is specified in action, camera, continuity, and end state.",
+        "style_consistency": "Visible evidence for style_consistency is specified in action, camera, continuity, and end state.",
+        "cutability": "Visible evidence for cutability is specified in action, camera, continuity, and end state."
+      }
+    },
+    {
+      "project_id": "example_project",
+      "episode_id": "ep01",
+      "shot_id": "seq08_05_reaction",
+      "sequence_role": "reaction_shot",
+      "is_combat_shot": true,
+      "style_route": "3d_guoman_cinematic",
+      "fight_director": {
+        "fight_intent": "Enemy shoulder dips and rear foot slides after the clash",
+        "combatants": [
+          "hero charging from lower right",
+          "enemy tracking from upper left"
+        ],
+        "tactical_objective": "complete this shot role: reaction_shot",
+        "opponent_counter_pressure": "enemy resists through spear pressure, height, armor weight, and recovery timing",
+        "spatial_map": "same rain courtyard axis, hero remains center-right/right-to-left, enemy remains screen left near stairs",
+        "action_chain": [
+          "inherit previous state",
+          "Enemy shoulder dips and rear foot slides after the clash",
+          "end with power reveal begins as floor seal glows"
+        ],
+        "result_state": "power reveal begins as floor seal glows",
+        "risk_level": "level_1_contact approach",
+        "readability_plan": "show one action purpose, one contact or reaction, one stable result for silent autoplay"
+      },
+      "combat_beat": {
+        "beat_type": "pressure_lock",
+        "screen_action": "Enemy shoulder dips and rear foot slides after the clash",
+        "tactical_meaning": "this beat advances the fight from spear rebounds from contact insert toward power reveal begins as floor seal glows",
+        "anticipation": "brief hold from previous continuity state before movement",
+        "contact_or_collision": "visible contact, reaction, or force boundary appropriate to reaction_shot",
+        "impact_feedback": "rain spray, weapon vibration, floor glow, debris, or posture change marks feedback",
+        "reaction": "enemy reaction occurs after the contact or pressure cue",
+        "aftermath": "end state is stable and readable for the next shot",
+        "camera_logic": "camera prioritizes reaction_shot and avoids hiding contact",
+        "vfx_logic": "VFX supports readability and stays attached to source/contact/floor",
+        "continuity_out": "power reveal begins as floor seal glows"
+      },
+      "impact_system": {
+        "impact_level": "level_3_heavy_clash",
+        "pre_impact": "inherits spear rebounds from contact insert with a short readable hold",
+        "contact_frame": "clear frame for Enemy shoulder dips and rear foot slides after the clash",
+        "hitstop": "brief readable hold",
+        "recoil": "weapon, cloth, armor, or posture reacts after the beat",
+        "environment_feedback": "wet floor, rain spray, sparks, dust, floor seal, or settling debris responds",
+        "sound_hint": "foot splash and cloth snap",
+        "aftermath_pose": "power reveal begins as floor seal glows"
+      },
+      "vfx_power": {
+        "vfx_type": "none",
+        "source": "weapon contact or hero seal depending on beat",
+        "shape_language": "gold floor geometry, rain spray, sparks, and clean silhouettes",
+        "motion_behavior": "appears at source, peaks briefly, then clears contact area",
+        "color_temperature": "cold blue night",
+        "interaction_with_body": "cloth, armor, and posture respond without hiding faces",
+        "interaction_with_environment": "wet floor, debris, rain, and light reflections react",
+        "visibility_rule": "VFX must support action readability, not hide contact frame",
+        "start_state": "spear rebounds from contact insert",
+        "peak_state": "Enemy shoulder dips and rear foot slides after the clash",
+        "end_state": "power reveal begins as floor seal glows"
+      },
+      "camera_coverage": {
+        "shot_type": "reaction_shot",
+        "camera_distance": "medium readable coverage",
+        "lens_feel": "wide enough for body and spear",
+        "camera_motion": "locked or slight tracking, never full orbit during contact",
+        "screen_direction": "preserve hero right-to-left pressure and enemy left-side position",
+        "subject_priority": "reaction_shot first, continuity second, VFX third",
+        "cut_point": "cut after power reveal begins as floor seal glows",
+        "continuity_from_previous": "spear rebounds from contact insert",
+        "continuity_to_next": "power reveal begins as floor seal glows"
+      },
+      "provider_route_strategy": {
+        "route": "video_final_route",
+        "duration": "3 seconds",
+        "complexity_level": "medium",
+        "reference_requirements": [
+          "character_ref",
+          "scene_ref",
+          "weapon_ref",
+          "first_frame",
+          "vfx_style_ref"
+        ],
+        "first_frame_plan": "spear rebounds from contact insert",
+        "end_frame_plan": "power reveal begins as floor seal glows",
+        "prompt_compression_rule": "one approach, one near-miss, one inside-lane result",
+        "provider": "user_confirmed_video_provider",
+        "model": "user_confirmed_video_model",
+        "route_class": "high_control_final",
+        "unsupported_controls": [],
+        "fallback_route": "package_only_dry_run"
+      },
+      "combat_tempo": {
+        "duration_seconds": 3.0,
+        "key_poses": [
+          "impact has just landed",
+          "reacting face or armor catches the force",
+          "body twists or drops weight",
+          "secondary cloth/rain/debris follows",
+          "reaction resolves into new tactical state"
+        ],
+        "action_events": [
+          "visible reaction to previous contact",
+          "body absorbs force",
+          "new advantage state becomes clear"
+        ],
+        "force_feedback": "head/torso recoil and environment follow-through show the prior impact",
+        "major_traversal_window": "major traversal, if present, completes within the first 20-40% and before midpoint",
+        "speed_curve": "instant recoil, short hold for readability, controlled settle into next cut; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+        "density_check": "pass",
+        "target_duration_policy": "ordinary_combat_2_5_to_3_5s",
+        "event_distribution": {
+          "frontloaded_event_ratio": 0.67,
+          "frontload_window_ratio": 0.7,
+          "ending_hold_ratio": 0.25,
+          "ending_hold_purpose": "reaction"
+        }
+      },
+      "prompt_human_readable_zh": "?5??Enemy shoulder dips and rear foot slides after the clash?",
+      "prompt_canonical_en": "3D guoman rain courtyard shot 5: Enemy shoulder dips and rear foot slides after the clash. Preserve the same left-right axis and readable contact/reaction.",
+      "provider_execution_prompt": "3D guoman cinematic rain courtyard. Enemy shoulder dips and rear foot slides after the clash. Preserve continuity from previous shot: spear rebounds from contact insert. Keep hero center-right or moving right-to-left and enemy on screen left near the stairs. Show one readable contact, reaction, or pressure cue, then end with power reveal begins as floor seal glows. Use one controlled camera behavior, clear wet-floor feedback, no teleporting, no gore, no subtitles, no VFX covering the contact frame.",
+      "negative_constraints": [
+        "no gore",
+        "no teleporting",
+        "no VFX covering contact",
+        "no subtitles"
+      ],
+      "asset_bindings": [
+        {
+          "role": "character_ref",
+          "name": "hero reference",
+          "source_id": "asset_char_hero",
+          "order": 1,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "scene_ref",
+          "name": "rain courtyard",
+          "source_id": "asset_scene_courtyard",
+          "order": 2,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "weapon_ref",
+          "name": "spear and sword",
+          "source_id": "asset_weapon_pair",
+          "order": 3,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "first_frame",
+          "name": "charge start frame",
+          "source_id": "frame_seq_02_first",
+          "order": 4,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "optional_end_frame",
+          "name": "inside spear line end frame",
+          "source_id": "frame_seq_02_end",
+          "order": 5,
+          "rights_status": "generated_project_asset"
+        }
+      ],
+      "qc_expectations": [
+        "continuity from previous is visible",
+        "one primary beat only",
+        "contact or reaction is readable",
+        "continuity to next is explicit"
+      ],
+      "combat_qc_score": {
+        "action_readability": 5,
+        "tactical_clarity": 5,
+        "contact_believability": 5,
+        "impact_feedback": 5,
+        "spatial_continuity": 5,
+        "vfx_readability": 5,
+        "style_consistency": 5,
+        "cutability": 5
+      },
+      "qc_evidence": {
+        "action_readability": "Visible evidence for action_readability is specified in action, camera, continuity, and end state.",
+        "tactical_clarity": "Visible evidence for tactical_clarity is specified in action, camera, continuity, and end state.",
+        "contact_believability": "Visible evidence for contact_believability is specified in action, camera, continuity, and end state.",
+        "impact_feedback": "Visible evidence for impact_feedback is specified in action, camera, continuity, and end state.",
+        "spatial_continuity": "Visible evidence for spatial_continuity is specified in action, camera, continuity, and end state.",
+        "vfx_readability": "Visible evidence for vfx_readability is specified in action, camera, continuity, and end state.",
+        "style_consistency": "Visible evidence for style_consistency is specified in action, camera, continuity, and end state.",
+        "cutability": "Visible evidence for cutability is specified in action, camera, continuity, and end state."
+      }
+    },
+    {
+      "project_id": "example_project",
+      "episode_id": "ep01",
+      "shot_id": "seq08_06_power_reveal",
+      "sequence_role": "power_reveal_wide",
+      "is_combat_shot": true,
+      "style_route": "3d_guoman_cinematic",
+      "fight_director": {
+        "fight_intent": "Golden avatar shadow rises behind the small hero",
+        "combatants": [
+          "hero charging from lower right",
+          "enemy tracking from upper left"
+        ],
+        "tactical_objective": "complete this shot role: power_reveal_wide",
+        "opponent_counter_pressure": "enemy resists through spear pressure, height, armor weight, and recovery timing",
+        "spatial_map": "same rain courtyard axis, hero remains center-right/right-to-left, enemy remains screen left near stairs",
+        "action_chain": [
+          "inherit previous state",
+          "Golden avatar shadow rises behind the small hero",
+          "end with suppression shot begins with avatar shadow overhead"
+        ],
+        "result_state": "suppression shot begins with avatar shadow overhead",
+        "risk_level": "level_1_contact approach",
+        "readability_plan": "show one action purpose, one contact or reaction, one stable result for silent autoplay"
+      },
+      "combat_beat": {
+        "beat_type": "avatar_manifestation",
+        "screen_action": "Golden avatar shadow rises behind the small hero",
+        "tactical_meaning": "this beat advances the fight from enemy recovering left, hero center-right toward suppression shot begins with avatar shadow overhead",
+        "anticipation": "brief hold from previous continuity state before movement",
+        "contact_or_collision": "visible contact, reaction, or force boundary appropriate to power_reveal_wide",
+        "impact_feedback": "rain spray, weapon vibration, floor glow, debris, or posture change marks feedback",
+        "reaction": "enemy reaction occurs after the contact or pressure cue",
+        "aftermath": "end state is stable and readable for the next shot",
+        "camera_logic": "camera prioritizes power_reveal_wide and avoids hiding contact",
+        "vfx_logic": "VFX supports readability and stays attached to source/contact/floor",
+        "continuity_out": "suppression shot begins with avatar shadow overhead"
+      },
+      "impact_system": {
+        "impact_level": "level_5_colossal_suppression",
+        "pre_impact": "inherits enemy recovering left, hero center-right with a short readable hold",
+        "contact_frame": "clear frame for Golden avatar shadow rises behind the small hero",
+        "hitstop": "brief readable hold",
+        "recoil": "weapon, cloth, armor, or posture reacts after the beat",
+        "environment_feedback": "wet floor, rain spray, sparks, dust, floor seal, or settling debris responds",
+        "sound_hint": "foot splash and cloth snap",
+        "aftermath_pose": "suppression shot begins with avatar shadow overhead"
+      },
+      "vfx_power": {
+        "vfx_type": "avatar_manifestation",
+        "source": "weapon contact or hero seal depending on beat",
+        "shape_language": "gold floor geometry, rain spray, sparks, and clean silhouettes",
+        "motion_behavior": "appears at source, peaks briefly, then clears contact area",
+        "color_temperature": "cold blue night",
+        "interaction_with_body": "cloth, armor, and posture respond without hiding faces",
+        "interaction_with_environment": "wet floor, debris, rain, and light reflections react",
+        "visibility_rule": "VFX must support action readability, not hide contact frame",
+        "start_state": "enemy recovering left, hero center-right",
+        "peak_state": "Golden avatar shadow rises behind the small hero",
+        "end_state": "suppression shot begins with avatar shadow overhead"
+      },
+      "camera_coverage": {
+        "shot_type": "power_reveal_wide",
+        "camera_distance": "wide low angle",
+        "lens_feel": "wide enough for body and spear",
+        "camera_motion": "locked or slight tracking, never full orbit during contact",
+        "screen_direction": "preserve hero right-to-left pressure and enemy left-side position",
+        "subject_priority": "power_reveal_wide first, continuity second, VFX third",
+        "cut_point": "cut after suppression shot begins with avatar shadow overhead",
+        "continuity_from_previous": "enemy recovering left, hero center-right",
+        "continuity_to_next": "suppression shot begins with avatar shadow overhead"
+      },
+      "provider_route_strategy": {
+        "route": "video_final_route",
+        "duration": "5 seconds",
+        "complexity_level": "high",
+        "reference_requirements": [
+          "character_ref",
+          "scene_ref",
+          "weapon_ref",
+          "first_frame",
+          "vfx_style_ref"
+        ],
+        "first_frame_plan": "enemy recovering left, hero center-right",
+        "end_frame_plan": "suppression shot begins with avatar shadow overhead",
+        "prompt_compression_rule": "one approach, one near-miss, one inside-lane result",
+        "provider": "user_confirmed_video_provider",
+        "model": "user_confirmed_video_model",
+        "route_class": "high_control_final",
+        "unsupported_controls": [],
+        "fallback_route": "package_only_dry_run"
+      },
+      "combat_tempo": {
+        "duration_seconds": 5.0,
+        "key_poses": [
+          "power source becomes visible",
+          "caster braces body weight",
+          "field expands from contact or floor anchor",
+          "enemy posture bends under pressure",
+          "environment reacts outward",
+          "final dominance pose holds readable spacing"
+        ],
+        "action_events": [
+          "power ignition starts from a visible source",
+          "field expansion reaches the opponent",
+          "opponent receives force feedback",
+          "environment confirms scale and direction"
+        ],
+        "force_feedback": "enemy body compression and floor debris/rain ripple show the force path",
+        "major_traversal_window": "extended duration is justified by environment reveal, power reveal, aftermath, or readable hold",
+        "speed_curve": "short ignition, fast expansion, pressure hitstop, heavy settling hold; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+        "density_check": "pass",
+        "target_duration_policy": "extended_special_5s_plus",
+        "event_distribution": {
+          "frontloaded_event_ratio": 0.67,
+          "frontload_window_ratio": 0.7,
+          "ending_hold_ratio": 0.25,
+          "ending_hold_purpose": "cut_ready_hold"
+        }
+      },
+      "prompt_human_readable_zh": "?6??Golden avatar shadow rises behind the small hero?",
+      "prompt_canonical_en": "3D guoman rain courtyard shot 6: Golden avatar shadow rises behind the small hero. Preserve the same left-right axis and readable contact/reaction.",
+      "provider_execution_prompt": "3D guoman cinematic rain courtyard. Golden avatar shadow rises behind the small hero. Preserve continuity from previous shot: enemy recovering left, hero center-right. Keep hero center-right or moving right-to-left and enemy on screen left near the stairs. Show one readable contact, reaction, or pressure cue, then end with suppression shot begins with avatar shadow overhead. Use one controlled camera behavior, clear wet-floor feedback, no teleporting, no gore, no subtitles, no VFX covering the contact frame.",
+      "negative_constraints": [
+        "no gore",
+        "no teleporting",
+        "no VFX covering contact",
+        "no subtitles"
+      ],
+      "asset_bindings": [
+        {
+          "role": "character_ref",
+          "name": "hero reference",
+          "source_id": "asset_char_hero",
+          "order": 1,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "scene_ref",
+          "name": "rain courtyard",
+          "source_id": "asset_scene_courtyard",
+          "order": 2,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "weapon_ref",
+          "name": "spear and sword",
+          "source_id": "asset_weapon_pair",
+          "order": 3,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "first_frame",
+          "name": "charge start frame",
+          "source_id": "frame_seq_02_first",
+          "order": 4,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "optional_end_frame",
+          "name": "inside spear line end frame",
+          "source_id": "frame_seq_02_end",
+          "order": 5,
+          "rights_status": "generated_project_asset"
+        }
+      ],
+      "qc_expectations": [
+        "continuity from previous is visible",
+        "one primary beat only",
+        "contact or reaction is readable",
+        "continuity to next is explicit"
+      ],
+      "combat_qc_score": {
+        "action_readability": 5,
+        "tactical_clarity": 5,
+        "contact_believability": 5,
+        "impact_feedback": 5,
+        "spatial_continuity": 5,
+        "vfx_readability": 5,
+        "style_consistency": 5,
+        "cutability": 5
+      },
+      "qc_evidence": {
+        "action_readability": "Visible evidence for action_readability is specified in action, camera, continuity, and end state.",
+        "tactical_clarity": "Visible evidence for tactical_clarity is specified in action, camera, continuity, and end state.",
+        "contact_believability": "Visible evidence for contact_believability is specified in action, camera, continuity, and end state.",
+        "impact_feedback": "Visible evidence for impact_feedback is specified in action, camera, continuity, and end state.",
+        "spatial_continuity": "Visible evidence for spatial_continuity is specified in action, camera, continuity, and end state.",
+        "vfx_readability": "Visible evidence for vfx_readability is specified in action, camera, continuity, and end state.",
+        "style_consistency": "Visible evidence for style_consistency is specified in action, camera, continuity, and end state.",
+        "cutability": "Visible evidence for cutability is specified in action, camera, continuity, and end state."
+      }
+    },
+    {
+      "project_id": "example_project",
+      "episode_id": "ep01",
+      "shot_id": "seq08_07_suppression",
+      "sequence_role": "suppression_field",
+      "is_combat_shot": true,
+      "style_route": "3d_guoman_cinematic",
+      "fight_director": {
+        "fight_intent": "Floor seal presses downward and enemy bends into half-kneel",
+        "combatants": [
+          "hero charging from lower right",
+          "enemy tracking from upper left"
+        ],
+        "tactical_objective": "complete this shot role: suppression_field",
+        "opponent_counter_pressure": "enemy resists through spear pressure, height, armor weight, and recovery timing",
+        "spatial_map": "same rain courtyard axis, hero remains center-right/right-to-left, enemy remains screen left near stairs",
+        "action_chain": [
+          "inherit previous state",
+          "Floor seal presses downward and enemy bends into half-kneel",
+          "end with aftermath starts with enemy pinned in floor seal"
+        ],
+        "result_state": "aftermath starts with enemy pinned in floor seal",
+        "risk_level": "level_1_contact approach",
+        "readability_plan": "show one action purpose, one contact or reaction, one stable result for silent autoplay"
+      },
+      "combat_beat": {
+        "beat_type": "suppression_field",
+        "screen_action": "Floor seal presses downward and enemy bends into half-kneel",
+        "tactical_meaning": "this beat advances the fight from avatar reveal from shot 6 toward aftermath starts with enemy pinned in floor seal",
+        "anticipation": "brief hold from previous continuity state before movement",
+        "contact_or_collision": "visible contact, reaction, or force boundary appropriate to suppression_field",
+        "impact_feedback": "rain spray, weapon vibration, floor glow, debris, or posture change marks feedback",
+        "reaction": "enemy reaction occurs after the contact or pressure cue",
+        "aftermath": "end state is stable and readable for the next shot",
+        "camera_logic": "camera prioritizes suppression_field and avoids hiding contact",
+        "vfx_logic": "VFX supports readability and stays attached to source/contact/floor",
+        "continuity_out": "aftermath starts with enemy pinned in floor seal"
+      },
+      "impact_system": {
+        "impact_level": "level_5_colossal_suppression",
+        "pre_impact": "inherits avatar reveal from shot 6 with a short readable hold",
+        "contact_frame": "clear frame for Floor seal presses downward and enemy bends into half-kneel",
+        "hitstop": "brief readable hold",
+        "recoil": "weapon, cloth, armor, or posture reacts after the beat",
+        "environment_feedback": "wet floor, rain spray, sparks, dust, floor seal, or settling debris responds",
+        "sound_hint": "foot splash and cloth snap",
+        "aftermath_pose": "aftermath starts with enemy pinned in floor seal"
+      },
+      "vfx_power": {
+        "vfx_type": "suppression_field",
+        "source": "weapon contact or hero seal depending on beat",
+        "shape_language": "gold floor geometry, rain spray, sparks, and clean silhouettes",
+        "motion_behavior": "appears at source, peaks briefly, then clears contact area",
+        "color_temperature": "cold blue night",
+        "interaction_with_body": "cloth, armor, and posture respond without hiding faces",
+        "interaction_with_environment": "wet floor, debris, rain, and light reflections react",
+        "visibility_rule": "VFX must support action readability, not hide contact frame",
+        "start_state": "avatar reveal from shot 6",
+        "peak_state": "Floor seal presses downward and enemy bends into half-kneel",
+        "end_state": "aftermath starts with enemy pinned in floor seal"
+      },
+      "camera_coverage": {
+        "shot_type": "exchange_medium_shot",
+        "camera_distance": "medium readable coverage",
+        "lens_feel": "wide enough for body and spear",
+        "camera_motion": "locked or slight tracking, never full orbit during contact",
+        "screen_direction": "preserve hero right-to-left pressure and enemy left-side position",
+        "subject_priority": "suppression_field first, continuity second, VFX third",
+        "cut_point": "cut after aftermath starts with enemy pinned in floor seal",
+        "continuity_from_previous": "avatar reveal from shot 6",
+        "continuity_to_next": "aftermath starts with enemy pinned in floor seal"
+      },
+      "provider_route_strategy": {
+        "route": "video_final_route",
+        "duration": "4 seconds",
+        "complexity_level": "high",
+        "reference_requirements": [
+          "character_ref",
+          "scene_ref",
+          "weapon_ref",
+          "first_frame",
+          "vfx_style_ref"
+        ],
+        "first_frame_plan": "avatar reveal from shot 6",
+        "end_frame_plan": "aftermath starts with enemy pinned in floor seal",
+        "prompt_compression_rule": "one approach, one near-miss, one inside-lane result",
+        "provider": "user_confirmed_video_provider",
+        "model": "user_confirmed_video_model",
+        "route_class": "high_control_final",
+        "unsupported_controls": [],
+        "fallback_route": "package_only_dry_run"
+      },
+      "combat_tempo": {
+        "duration_seconds": 4.0,
+        "key_poses": [
+          "pre-contact guard set",
+          "weapon or limb enters the contact line",
+          "clear collision pose with readable overlap",
+          "brief hitstop at the contact point",
+          "recoil through shoulders and cloth",
+          "end pose preserves the next cut direction"
+        ],
+        "action_events": [
+          "attack line enters frame",
+          "guard meets the weapon or strike",
+          "impact feedback bursts outward",
+          "recoil changes advantage"
+        ],
+        "force_feedback": "hitstop, sparks or rain spray, and body recoil reveal force transfer",
+        "major_traversal_window": "short traversal or weapon entry resolves before contact; contact and reaction fill the back half",
+        "speed_curve": "anticipation, burst into contact, held impact frame, recoil, controlled end pose; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+        "density_check": "pass",
+        "target_duration_policy": "readable_contact_4s",
+        "event_distribution": {
+          "frontloaded_event_ratio": 0.67,
+          "frontload_window_ratio": 0.7,
+          "ending_hold_ratio": 0.25,
+          "ending_hold_purpose": "reaction"
+        }
+      },
+      "prompt_human_readable_zh": "?7??Floor seal presses downward and enemy bends into half-kneel?",
+      "prompt_canonical_en": "3D guoman rain courtyard shot 7: Floor seal presses downward and enemy bends into half-kneel. Preserve the same left-right axis and readable contact/reaction.",
+      "provider_execution_prompt": "3D guoman cinematic rain courtyard. Floor seal presses downward and enemy bends into half-kneel. Preserve continuity from previous shot: avatar reveal from shot 6. Keep hero center-right or moving right-to-left and enemy on screen left near the stairs. Show one readable contact, reaction, or pressure cue, then end with aftermath starts with enemy pinned in floor seal. Use one controlled camera behavior, clear wet-floor feedback, no teleporting, no gore, no subtitles, no VFX covering the contact frame.",
+      "negative_constraints": [
+        "no gore",
+        "no teleporting",
+        "no VFX covering contact",
+        "no subtitles"
+      ],
+      "asset_bindings": [
+        {
+          "role": "character_ref",
+          "name": "hero reference",
+          "source_id": "asset_char_hero",
+          "order": 1,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "scene_ref",
+          "name": "rain courtyard",
+          "source_id": "asset_scene_courtyard",
+          "order": 2,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "weapon_ref",
+          "name": "spear and sword",
+          "source_id": "asset_weapon_pair",
+          "order": 3,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "first_frame",
+          "name": "charge start frame",
+          "source_id": "frame_seq_02_first",
+          "order": 4,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "optional_end_frame",
+          "name": "inside spear line end frame",
+          "source_id": "frame_seq_02_end",
+          "order": 5,
+          "rights_status": "generated_project_asset"
+        }
+      ],
+      "qc_expectations": [
+        "continuity from previous is visible",
+        "one primary beat only",
+        "contact or reaction is readable",
+        "continuity to next is explicit"
+      ],
+      "combat_qc_score": {
+        "action_readability": 5,
+        "tactical_clarity": 5,
+        "contact_believability": 5,
+        "impact_feedback": 5,
+        "spatial_continuity": 5,
+        "vfx_readability": 5,
+        "style_consistency": 5,
+        "cutability": 5
+      },
+      "qc_evidence": {
+        "action_readability": "Visible evidence for action_readability is specified in action, camera, continuity, and end state.",
+        "tactical_clarity": "Visible evidence for tactical_clarity is specified in action, camera, continuity, and end state.",
+        "contact_believability": "Visible evidence for contact_believability is specified in action, camera, continuity, and end state.",
+        "impact_feedback": "Visible evidence for impact_feedback is specified in action, camera, continuity, and end state.",
+        "spatial_continuity": "Visible evidence for spatial_continuity is specified in action, camera, continuity, and end state.",
+        "vfx_readability": "Visible evidence for vfx_readability is specified in action, camera, continuity, and end state.",
+        "style_consistency": "Visible evidence for style_consistency is specified in action, camera, continuity, and end state.",
+        "cutability": "Visible evidence for cutability is specified in action, camera, continuity, and end state."
+      }
+    },
+    {
+      "project_id": "example_project",
+      "episode_id": "ep01",
+      "shot_id": "seq08_08_aftermath",
+      "sequence_role": "aftermath_hold",
+      "is_combat_shot": true,
+      "style_route": "3d_guoman_cinematic",
+      "fight_director": {
+        "fight_intent": "Hero holds low stance while enemy remains pinned and rain settles",
+        "combatants": [
+          "hero charging from lower right",
+          "enemy tracking from upper left"
+        ],
+        "tactical_objective": "complete this shot role: aftermath_hold",
+        "opponent_counter_pressure": "enemy resists through spear pressure, height, armor weight, and recovery timing",
+        "spatial_map": "same rain courtyard axis, hero remains center-right/right-to-left, enemy remains screen left near stairs",
+        "action_chain": [
+          "inherit previous state",
+          "Hero holds low stance while enemy remains pinned and rain settles",
+          "end with sequence ends on stable aftermath"
+        ],
+        "result_state": "sequence ends on stable aftermath",
+        "risk_level": "level_1_contact approach",
+        "readability_plan": "show one action purpose, one contact or reaction, one stable result for silent autoplay"
+      },
+      "combat_beat": {
+        "beat_type": "aftermath_reaction",
+        "screen_action": "Hero holds low stance while enemy remains pinned and rain settles",
+        "tactical_meaning": "this beat advances the fight from enemy pinned in floor seal from shot 7 toward sequence ends on stable aftermath",
+        "anticipation": "brief hold from previous continuity state before movement",
+        "contact_or_collision": "visible contact, reaction, or force boundary appropriate to aftermath_hold",
+        "impact_feedback": "rain spray, weapon vibration, floor glow, debris, or posture change marks feedback",
+        "reaction": "enemy reaction occurs after the contact or pressure cue",
+        "aftermath": "end state is stable and readable for the next shot",
+        "camera_logic": "camera prioritizes aftermath_hold and avoids hiding contact",
+        "vfx_logic": "VFX supports readability and stays attached to source/contact/floor",
+        "continuity_out": "sequence ends on stable aftermath"
+      },
+      "impact_system": {
+        "impact_level": "level_1_contact",
+        "pre_impact": "inherits enemy pinned in floor seal from shot 7 with a short readable hold",
+        "contact_frame": "clear frame for Hero holds low stance while enemy remains pinned and rain settles",
+        "hitstop": "brief readable hold",
+        "recoil": "weapon, cloth, armor, or posture reacts after the beat",
+        "environment_feedback": "wet floor, rain spray, sparks, dust, floor seal, or settling debris responds",
+        "sound_hint": "foot splash and cloth snap",
+        "aftermath_pose": "sequence ends on stable aftermath"
+      },
+      "vfx_power": {
+        "vfx_type": "none",
+        "source": "weapon contact or hero seal depending on beat",
+        "shape_language": "gold floor geometry, rain spray, sparks, and clean silhouettes",
+        "motion_behavior": "appears at source, peaks briefly, then clears contact area",
+        "color_temperature": "cold blue night",
+        "interaction_with_body": "cloth, armor, and posture respond without hiding faces",
+        "interaction_with_environment": "wet floor, debris, rain, and light reflections react",
+        "visibility_rule": "VFX must support action readability, not hide contact frame",
+        "start_state": "enemy pinned in floor seal from shot 7",
+        "peak_state": "Hero holds low stance while enemy remains pinned and rain settles",
+        "end_state": "sequence ends on stable aftermath"
+      },
+      "camera_coverage": {
+        "shot_type": "aftermath_hold",
+        "camera_distance": "medium readable coverage",
+        "lens_feel": "wide enough for body and spear",
+        "camera_motion": "locked or slight tracking, never full orbit during contact",
+        "screen_direction": "preserve hero right-to-left pressure and enemy left-side position",
+        "subject_priority": "aftermath_hold first, continuity second, VFX third",
+        "cut_point": "cut after sequence ends on stable aftermath",
+        "continuity_from_previous": "enemy pinned in floor seal from shot 7",
+        "continuity_to_next": "sequence ends on stable aftermath"
+      },
+      "provider_route_strategy": {
+        "route": "video_final_route",
+        "duration": "5 seconds",
+        "complexity_level": "medium",
+        "reference_requirements": [
+          "character_ref",
+          "scene_ref",
+          "weapon_ref",
+          "first_frame",
+          "vfx_style_ref"
+        ],
+        "first_frame_plan": "enemy pinned in floor seal from shot 7",
+        "end_frame_plan": "sequence ends on stable aftermath",
+        "prompt_compression_rule": "one approach, one near-miss, one inside-lane result",
+        "provider": "user_confirmed_video_provider",
+        "model": "user_confirmed_video_model",
+        "route_class": "high_control_final",
+        "unsupported_controls": [],
+        "fallback_route": "package_only_dry_run"
+      },
+      "combat_tempo": {
+        "duration_seconds": 5.0,
+        "key_poses": [
+          "final contact result is visible",
+          "dominant character holds readable posture",
+          "opponent settles into disadvantage",
+          "debris/rain/cloth finish moving",
+          "next objective is implied by eye line or weapon line",
+          "extra readable key pose for tempo density"
+        ],
+        "action_events": [
+          "aftermath hold shows result",
+          "secondary motion decays",
+          "next-shot hook is established"
+        ],
+        "force_feedback": "settling debris, rain, cloth, and posture show the finished impact",
+        "major_traversal_window": "extended duration is justified by environment reveal, power reveal, aftermath, or readable hold",
+        "speed_curve": "impact residue, readable hold, slow decay, next-hook ending; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+        "density_check": "pass",
+        "target_duration_policy": "extended_special_5s_plus",
+        "event_distribution": {
+          "frontloaded_event_ratio": 0.67,
+          "frontload_window_ratio": 0.7,
+          "ending_hold_ratio": 0.25,
+          "ending_hold_purpose": "aftermath"
+        }
+      },
+      "prompt_human_readable_zh": "?8??Hero holds low stance while enemy remains pinned and rain settles?",
+      "prompt_canonical_en": "3D guoman rain courtyard shot 8: Hero holds low stance while enemy remains pinned and rain settles. Preserve the same left-right axis and readable contact/reaction.",
+      "provider_execution_prompt": "3D guoman cinematic rain courtyard. Hero holds low stance while enemy remains pinned and rain settles. Preserve continuity from previous shot: enemy pinned in floor seal from shot 7. Keep hero center-right or moving right-to-left and enemy on screen left near the stairs. Show one readable contact, reaction, or pressure cue, then end with sequence ends on stable aftermath. Use one controlled camera behavior, clear wet-floor feedback, no teleporting, no gore, no subtitles, no VFX covering the contact frame.",
+      "negative_constraints": [
+        "no gore",
+        "no teleporting",
+        "no VFX covering contact",
+        "no subtitles"
+      ],
+      "asset_bindings": [
+        {
+          "role": "character_ref",
+          "name": "hero reference",
+          "source_id": "asset_char_hero",
+          "order": 1,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "scene_ref",
+          "name": "rain courtyard",
+          "source_id": "asset_scene_courtyard",
+          "order": 2,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "weapon_ref",
+          "name": "spear and sword",
+          "source_id": "asset_weapon_pair",
+          "order": 3,
+          "rights_status": "original_or_authorized"
+        },
+        {
+          "role": "first_frame",
+          "name": "charge start frame",
+          "source_id": "frame_seq_02_first",
+          "order": 4,
+          "rights_status": "generated_project_asset"
+        },
+        {
+          "role": "optional_end_frame",
+          "name": "inside spear line end frame",
+          "source_id": "frame_seq_02_end",
+          "order": 5,
+          "rights_status": "generated_project_asset"
+        }
+      ],
+      "qc_expectations": [
+        "continuity from previous is visible",
+        "one primary beat only",
+        "contact or reaction is readable",
+        "continuity to next is explicit"
+      ],
+      "combat_qc_score": {
+        "action_readability": 5,
+        "tactical_clarity": 5,
+        "contact_believability": 5,
+        "impact_feedback": 5,
+        "spatial_continuity": 5,
+        "vfx_readability": 5,
+        "style_consistency": 5,
+        "cutability": 5
+      },
+      "qc_evidence": {
+        "action_readability": "Visible evidence for action_readability is specified in action, camera, continuity, and end state.",
+        "tactical_clarity": "Visible evidence for tactical_clarity is specified in action, camera, continuity, and end state.",
+        "contact_believability": "Visible evidence for contact_believability is specified in action, camera, continuity, and end state.",
+        "impact_feedback": "Visible evidence for impact_feedback is specified in action, camera, continuity, and end state.",
+        "spatial_continuity": "Visible evidence for spatial_continuity is specified in action, camera, continuity, and end state.",
+        "vfx_readability": "Visible evidence for vfx_readability is specified in action, camera, continuity, and end state.",
+        "style_consistency": "Visible evidence for style_consistency is specified in action, camera, continuity, and end state.",
+        "cutability": "Visible evidence for cutability is specified in action, camera, continuity, and end state."
+      }
+    }
+  ]
+}

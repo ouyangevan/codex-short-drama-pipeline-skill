@@ -1,0 +1,201 @@
+{
+  "project_id": "example_project",
+  "episode_id": "ep01",
+  "shot_id": "combat_020",
+  "is_combat_shot": true,
+  "style_route": "2d_ink_anime_high_impact",
+  "fight_director": {
+    "fight_intent": "weapon clash that proves equal force before a reversal",
+    "combatants": [
+      "sword hero screen right",
+      "staff opponent screen left"
+    ],
+    "tactical_objective": "stop the staff sweep and open a counter line",
+    "opponent_counter_pressure": "staff opponent sweeps from low left to high right, forcing the hero to block late",
+    "spatial_map": "flat graphic side axis, hero right, opponent left, diagonal weapon lines cross center frame",
+    "action_chain": [
+      "held pose",
+      "staff sweep",
+      "sword rises",
+      "weapons collide",
+      "ink burst",
+      "both recoil"
+    ],
+    "result_state": "weapons locked center frame, hero blade angles upward for next counter",
+    "risk_level": "level_3_heavy_clash",
+    "readability_plan": "bold silhouettes and one held impact frame make the collision readable"
+  },
+  "combat_beat": {
+    "beat_type": "weapon_clash",
+    "screen_action": "sword catches the staff sweep in a graphic crossed-weapon impact",
+    "tactical_meaning": "hero survives pressure and creates a counter opening",
+    "anticipation": "two silhouettes freeze for a half beat before the staff arc",
+    "contact_or_collision": "blade edge and staff center cross at screen center",
+    "impact_feedback": "black ink burst and white spark lines radiate from the crossing point",
+    "reaction": "both sleeves snap back, staff opponent slides one foot",
+    "aftermath": "ink smear trails remain behind the weapon arcs",
+    "camera_logic": "locked side composition, no camera shake",
+    "vfx_logic": "brushstroke energy follows weapon arcs and never covers the crossing point",
+    "continuity_out": "hero blade now points upward for the next counter"
+  },
+  "impact_system": {
+    "impact_level": "level_3_heavy_clash",
+    "pre_impact": "stillness-to-burst held pose",
+    "contact_frame": "one graphic crossed-weapon frame",
+    "hitstop": "held impact frame with ink splash",
+    "recoil": "weapon arcs bounce apart and sleeves snap",
+    "environment_feedback": "ink flecks and speed lines streak outward",
+    "sound_hint": "sharp wood-metal crack",
+    "aftermath_pose": "hero stays planted, opponent foot slides back"
+  },
+  "vfx_power": {
+    "vfx_type": "weapon_energy",
+    "source": "weapon arcs",
+    "shape_language": "ink smear and brushstroke slashes",
+    "motion_behavior": "short explosive streaks then fade",
+    "color_temperature": "black ink, white sparks, muted red accent",
+    "interaction_with_body": "sleeves and hair follow through",
+    "interaction_with_environment": "ink flecks cross foreground only",
+    "visibility_rule": "VFX must support action readability, not hide contact frame",
+    "start_state": "thin brush lines along weapons",
+    "peak_state": "ink burst at collision",
+    "end_state": "fading smear trails"
+  },
+  "camera_coverage": {
+    "shot_type": "contact_insert",
+    "camera_distance": "medium close graphic side shot",
+    "lens_feel": "flat 2D graphic composition",
+    "camera_motion": "locked frame",
+    "screen_direction": "staff sweeps left to right, sword rises right to left",
+    "subject_priority": "weapon crossing point",
+    "cut_point": "after recoil and upward blade line",
+    "continuity_from_previous": "opponent begins staff sweep from left",
+    "continuity_to_next": "hero counter follows upward blade line"
+  },
+  "provider_route_strategy": {
+    "route": "video_final_route",
+    "duration": "4 seconds",
+    "complexity_level": "medium",
+    "reference_requirements": [
+      "character_ref",
+      "weapon_prop_ref",
+      "first_frame",
+      "key_pose_reference"
+    ],
+    "first_frame_plan": "locked side pose before staff sweep",
+    "end_frame_plan": "weapons rebound, hero blade angled upward",
+    "prompt_compression_rule": "prioritize silhouette, weapon crossing, held impact frame, recoil",
+    "provider": "user_confirmed_video_provider",
+    "model": "user_confirmed_video_model",
+    "route_class": "high_control_final",
+    "unsupported_controls": [],
+    "fallback_route": "package_only_dry_run"
+  },
+  "combat_tempo": {
+    "duration_seconds": 4.0,
+    "key_poses": [
+      "pre-contact guard set",
+      "weapon or limb enters the contact line",
+      "clear collision pose with readable overlap",
+      "brief hitstop at the contact point",
+      "recoil through shoulders and cloth",
+      "end pose preserves the next cut direction"
+    ],
+    "action_events": [
+      "attack line enters frame",
+      "guard meets the weapon or strike",
+      "impact feedback bursts outward",
+      "recoil changes advantage"
+    ],
+    "force_feedback": "hitstop, sparks or rain spray, and body recoil reveal force transfer",
+    "major_traversal_window": "short traversal or weapon entry resolves before contact; contact and reaction fill the back half",
+    "speed_curve": "anticipation, burst into contact, held impact frame, recoil, controlled end pose; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+    "density_check": "pass",
+    "target_duration_policy": "readable_contact_4s",
+    "event_distribution": {
+      "frontloaded_event_ratio": 0.67,
+      "frontload_window_ratio": 0.7,
+      "ending_hold_ratio": 0.25,
+      "ending_hold_purpose": "reaction"
+    }
+  },
+  "prompt_human_readable_zh": "åŽŸåˆ›2Dæ°´å¢¨æ­¦ä¾ é«˜åŠ¨æ€é•œå¤´ï¼ŒåŒæ–¹å…µå™¨åœ¨ç”»é¢ä¸­å¿ƒäº¤å‰ç¢°æ’žï¼Œå¢¨ç—•ä¸Žç«èŠ±çªå‡ºæŽ¥è§¦å¸§ã€‚",
+  "prompt_canonical_en": "Original 2D ink martial fantasy animation, bold silhouettes, staff sweep meets rising sword, clear crossed-weapon impact frame, ink burst, recoil, no copied IP style.",
+  "provider_execution_prompt": "Original 2D ink martial fantasy animation. Locked side composition: staff opponent on screen left sweeps low-to-high, sword hero on screen right raises blade to catch the staff at center frame. Hold one clear crossed-weapon impact frame with black ink burst and white spark lines radiating outward. Both weapons rebound, sleeves snap back, opponent slides one foot, hero blade ends angled upward for a counter. Bold silhouettes, brushstroke energy, no copied IP, no gore, no subtitles.",
+  "negative_constraints": [
+    "no copied IP",
+    "no gore",
+    "no VFX hiding weapon crossing",
+    "no subtitles"
+  ],
+  "asset_bindings": [
+    {
+      "role": "character_ref",
+      "name": "sword hero silhouette reference",
+      "source_id": "asset_char_sword_hero",
+      "order": 1,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "character_ref",
+      "name": "staff opponent silhouette reference",
+      "source_id": "asset_char_staff_enemy",
+      "order": 2,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "scene_ref",
+      "name": "minimal ink stage background reference",
+      "source_id": "asset_scene_ink_stage",
+      "order": 3,
+      "rights_status": "generated_project_asset"
+    },
+    {
+      "role": "weapon_ref",
+      "name": "sword and staff shape reference",
+      "source_id": "asset_weapon_sword_staff",
+      "order": 4,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "first_frame",
+      "name": "locked side pre-clash pose",
+      "source_id": "frame_first_020",
+      "order": 5,
+      "rights_status": "generated_project_asset"
+    },
+    {
+      "role": "vfx_style_ref",
+      "name": "original ink smear impact reference",
+      "source_id": "asset_vfx_ink_smear",
+      "order": 6,
+      "rights_status": "generated_project_asset"
+    }
+  ],
+  "qc_expectations": [
+    "clear silhouettes",
+    "visible weapon collision",
+    "held impact frame",
+    "recoil after contact"
+  ],
+  "combat_qc_score": {
+    "action_readability": 5,
+    "tactical_clarity": 4,
+    "contact_believability": 4,
+    "impact_feedback": 5,
+    "spatial_continuity": 5,
+    "vfx_readability": 5,
+    "style_consistency": 5,
+    "cutability": 5
+  },
+  "qc_evidence": {
+    "action_readability": "Locked side view and bold silhouettes keep the weapon crossing legible.",
+    "tactical_clarity": "Hero blocks the staff sweep to open a counter line.",
+    "contact_believability": "Blade and staff cross at the center with a held contact frame.",
+    "impact_feedback": "Ink burst, white spark lines, sleeve snap, and sliding foot show feedback.",
+    "spatial_continuity": "Opponent remains left and hero remains right along one graphic axis.",
+    "vfx_readability": "Brushstroke energy follows arcs and avoids covering the crossing point.",
+    "style_consistency": "The prompt uses original 2D ink martial fantasy language without naming IP.",
+    "cutability": "The upward blade line creates a clean transition into the next counter shot."
+  }
+}

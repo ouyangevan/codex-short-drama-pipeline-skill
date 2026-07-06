@@ -1,0 +1,213 @@
+{
+  "project_id": "example_project",
+  "episode_id": "ep01",
+  "shot_id": "combat_010",
+  "is_combat_shot": true,
+  "style_route": "3d_guoman_cinematic",
+  "fight_director": {
+    "fight_intent": "colossal suppression after the hero changes the power relation",
+    "combatants": [
+      {
+        "name": "hero",
+        "role": "smaller sword cultivator",
+        "state": "wounded but stable, low stance, right hand on short sword"
+      },
+      {
+        "name": "enemy",
+        "role": "armored spear guardian",
+        "state": "larger body, advancing from upper stairs, spear pressing down"
+      }
+    ],
+    "tactical_objective": "pin the enemy in place by planting a suppression seal at the first weapon contact",
+    "opponent_counter_pressure": "enemy uses height advantage and spear reach to force the hero backward",
+    "spatial_map": "enemy screen left and higher on stairs, hero screen right and lower in courtyard, camera keeps the left-right axis, wet stone floor and broken pillars as anchors",
+    "action_chain": [
+      "hero lowers center of gravity",
+      "enemy thrusts spear downward",
+      "hero steps diagonally inside the spear line",
+      "short sword spine contacts the spear shaft",
+      "golden avatar shadow rises behind hero",
+      "suppression field presses enemy into half-kneel"
+    ],
+    "result_state": "hero holds ground on lower right, enemy pinned left-front in half-kneel, spear displaced toward screen left, glowing field remains for next shot",
+    "risk_level": "level_5_colossal_suppression without gore",
+    "readability_plan": "first show left-right layout, then clear weapon contact, then avatar scale, then enemy reaction and floor pressure"
+  },
+  "combat_beat": {
+    "beat_type": "suppression_field",
+    "screen_action": "hero enters under the spear line and turns the weapon clash into a ground suppression field",
+    "tactical_meaning": "the smaller fighter stops retreating and takes control of space",
+    "anticipation": "hero crouches low as the spear shadow crosses the wet floor",
+    "contact_or_collision": "short sword spine visibly hits the middle of the spear shaft",
+    "impact_feedback": "sparks and rain spray burst sideways from the weapon contact",
+    "reaction": "enemy armor bends forward and one knee is forced down after contact",
+    "aftermath": "floor pattern glows, debris presses flat, hero remains rooted",
+    "camera_logic": "low three-quarter tracking push, no orbit during contact",
+    "vfx_logic": "avatar appears behind hero only at impact, suppression field expands from contact point to enemy feet",
+    "continuity_out": "next shot starts from enemy half-kneel inside glowing floor pattern"
+  },
+  "impact_system": {
+    "impact_level": "level_5_colossal_suppression",
+    "pre_impact": "rain quiets visually, spear shadow lengthens, hero lowers weight",
+    "contact_frame": "sword spine meets spear shaft in a clean crossed-weapon frame",
+    "hitstop": "one brief frozen-feeling impact frame before the field expands",
+    "recoil": "spear shaft vibrates left, hero sleeve snaps backward, enemy shoulder dips",
+    "environment_feedback": "wet floor ripples, golden floor lines flare, small stones press downward",
+    "sound_hint": "low boom plus metal ring, foreground only",
+    "aftermath_pose": "hero planted forward, enemy half-kneeling under pressure"
+  },
+  "vfx_power": {
+    "vfx_type": "suppression_field",
+    "source": "hero sword contact and palm seal",
+    "shape_language": "gold circular floor marks and translucent avatar silhouette",
+    "motion_behavior": "field expands outward then pushes downward",
+    "color_temperature": "warm gold against cold blue rain",
+    "interaction_with_body": "hero silhouette stays clear, enemy armor and cloak bend downward",
+    "interaction_with_environment": "rain spray, floor reflection, dust, and stones react downward",
+    "visibility_rule": "VFX must support action readability, not hide contact frame",
+    "start_state": "faint gold line at weapon contact",
+    "peak_state": "avatar shadow rises and floor seal brightens under enemy",
+    "end_state": "avatar fades, floor seal remains"
+  },
+  "camera_coverage": {
+    "shot_type": "power_reveal_wide",
+    "camera_distance": "wide-to-medium low angle",
+    "lens_feel": "wide spatial depth with foreground wet stone",
+    "camera_motion": "low tracking push only",
+    "screen_direction": "hero moves right to left, enemy pressure comes left to right",
+    "subject_priority": "weapon contact first, avatar scale second, enemy knee reaction third",
+    "cut_point": "cut after enemy is pinned and field remains readable",
+    "continuity_from_previous": "previous shot shows enemy advancing from upper stairs",
+    "continuity_to_next": "next shot can begin on enemy half-kneel or floor seal close-up"
+  },
+  "provider_route_strategy": {
+    "route": "video_final_route",
+    "duration": "5 seconds",
+    "complexity_level": "high",
+    "reference_requirements": [
+      "character_ref",
+      "scene_ref",
+      "weapon_prop_ref",
+      "first_frame",
+      "optional_end_frame",
+      "vfx_style_ref"
+    ],
+    "first_frame_plan": "hero low right, enemy high left with spear descending, wet courtyard visible",
+    "end_frame_plan": "enemy half-kneel inside floor seal, hero rooted forward",
+    "prompt_compression_rule": "use shot graph to write one compressed execution prompt; do not paste director analysis",
+    "provider": "user_confirmed_video_provider",
+    "model": "user_confirmed_video_model",
+    "route_class": "high_control_final",
+    "unsupported_controls": [],
+    "fallback_route": "package_only_dry_run"
+  },
+  "combat_tempo": {
+    "duration_seconds": 5.0,
+    "key_poses": [
+      "power source becomes visible",
+      "caster braces body weight",
+      "field expands from contact or floor anchor",
+      "enemy posture bends under pressure",
+      "environment reacts outward",
+      "final dominance pose holds readable spacing"
+    ],
+    "action_events": [
+      "power ignition starts from a visible source",
+      "field expansion reaches the opponent",
+      "opponent receives force feedback",
+      "environment confirms scale and direction"
+    ],
+    "force_feedback": "enemy body compression and floor debris/rain ripple show the force path",
+    "major_traversal_window": "extended duration is justified by environment reveal, power reveal, aftermath, or readable hold",
+    "speed_curve": "short ignition, fast expansion, pressure hitstop, heavy settling hold; front-load at least 60% of events before 70% of duration, then hold reaction or landing",
+    "density_check": "pass",
+    "target_duration_policy": "extended_special_5s_plus",
+    "event_distribution": {
+      "frontloaded_event_ratio": 0.67,
+      "frontload_window_ratio": 0.7,
+      "ending_hold_ratio": 0.25,
+      "ending_hold_purpose": "cut_ready_hold"
+    }
+  },
+  "prompt_human_readable_zh": "3Då›½æ¼«é£Žé›¨å¤œçŸ³åº­ï¼Œä¸»è§’åœ¨å³ä½Žä½å€Ÿåˆ€èƒŒæ ¼ä½å·¦é«˜ä½æ•Œäººçš„é•¿æžªï¼Œå¹¶åœ¨æŽ¥è§¦çž¬é—´å±•å¼€é‡‘è‰²é•‡åŽ‹åœºï¼Œæ³•èº«çŸ­æš‚æ˜¾çŽ°ï¼Œæ•Œäººè¢«åŽ‹æˆåŠè·ªã€‚",
+  "prompt_canonical_en": "3D guoman cinematic rain courtyard. Hero on lower screen right steps inside the spear line, sword spine contacts the enemy spear shaft, a golden suppression field expands downward from the contact, translucent avatar silhouette appears briefly, enemy is pressed into half-kneel. Low tracking push, clear contact, wet stone reflections.",
+  "provider_execution_prompt": "Rain-soaked stone courtyard at night, hero low on screen right facing left, enemy spear guardian higher on screen left thrusting down. The hero steps diagonally inside and the short sword spine clearly strikes the middle of the spear shaft. At that contact, a warm golden floor seal expands downward and a translucent avatar silhouette appears behind the hero for a brief instant. Enemy armor bends forward into a half-kneel, spear displaced left, wet floor ripples and small stones press down. Low three-quarter tracking push only, cold blue rain with warm gold reflections. No gore, no teleporting, no VFX covering the weapon contact, no extra characters, no subtitles.",
+  "negative_constraints": [
+    "no gore",
+    "no teleporting",
+    "no VFX covering contact",
+    "no extra characters",
+    "no subtitles"
+  ],
+  "asset_bindings": [
+    {
+      "role": "character_ref",
+      "name": "hero fictional cultivator reference",
+      "source_id": "asset_char_hero",
+      "order": 1,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "character_ref",
+      "name": "enemy spear guardian reference",
+      "source_id": "asset_char_enemy",
+      "order": 2,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "scene_ref",
+      "name": "rain courtyard stone stairs reference",
+      "source_id": "asset_scene_courtyard",
+      "order": 3,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "weapon_ref",
+      "name": "short sword and spear scale reference",
+      "source_id": "asset_weapon_pair",
+      "order": 4,
+      "rights_status": "original_or_authorized"
+    },
+    {
+      "role": "first_frame",
+      "name": "hero low right enemy high left first frame",
+      "source_id": "frame_first_010",
+      "order": 5,
+      "rights_status": "generated_project_asset"
+    },
+    {
+      "role": "vfx_style_ref",
+      "name": "gold suppression floor seal reference",
+      "source_id": "asset_vfx_gold_seal",
+      "order": 6,
+      "rights_status": "generated_project_asset"
+    }
+  ],
+  "qc_expectations": [
+    "clear left-right axis",
+    "visible weapon contact",
+    "enemy reaction after contact",
+    "avatar has scale reference",
+    "suppression field does not hide action"
+  ],
+  "combat_qc_score": {
+    "action_readability": 5,
+    "tactical_clarity": 5,
+    "contact_believability": 4,
+    "impact_feedback": 5,
+    "spatial_continuity": 5,
+    "vfx_readability": 4,
+    "style_consistency": 5,
+    "cutability": 5
+  },
+  "qc_evidence": {
+    "action_readability": "Weapon contact, avatar reveal, enemy reaction, and aftermath are ordered visibly.",
+    "tactical_clarity": "Hero uses the spear clash to reverse pressure into a suppression field.",
+    "contact_believability": "The first contact is the sword spine striking the spear shaft at center frame.",
+    "impact_feedback": "Sparks, rain spray, floor ripples, and stones pressing down prove impact.",
+    "spatial_continuity": "Hero stays screen right/lower and enemy stays screen left/higher through the shot.",
+    "vfx_readability": "Gold seal expands from contact and stays below the action instead of covering it.",
+    "style_consistency": "3D guoman cues use depth, wet stone, volumetric rain, and mythic scale.",
+    "cutability": "The shot ends with enemy half-kneeling in a stable next-shot state."
+  }
+}
